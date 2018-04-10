@@ -43,6 +43,7 @@ def get_files():
     files = [os.path.join(m_path, f) for f in files]
     return files
 
+
 def read_file(file):
     '''
     Rad one file and analyse.
@@ -50,11 +51,9 @@ def read_file(file):
     global user_name
     global rent_device
 
-
     with open(file, 'r') as f:
         content = f.read()
         # print(content)
-
 
         name_pattern = [r'regards,*\n(\w+)',
                         r'cheers,*\n(\w+)',
