@@ -1,0 +1,312 @@
+{
+  "rasa_nlu_data": {
+    "common_examples": [
+      {
+        "text": "Regards, David",
+        "intent": "name_finding",
+        "entities": [
+          {
+            "start": 9,
+            "end": 14,
+            "value": "David",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "Cheers, Jacob",
+        "intent": "name_finding",
+        "entities": [
+          {
+            "start": 8,
+            "end": 13,
+            "value": "Jacob",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "My name is Hans",
+        "intent": "name_finding",
+        "entities": [
+          {
+            "start": 11,
+            "end": 15,
+            "value": "Hans",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "I want to rent a Galaxy S3.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 17,
+            "end": 26,
+            "value": "Galaxy S3",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I would like to borrow a iPhone 7 Plus 128GB.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 25,
+            "end": 44,
+            "value": "iPhone 7 Plus 128GB",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I broke my computer and would like to rent a Samsung Galaxy S8+ 64GB?",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 53,
+            "end": 68,
+            "value": "Samsung Galaxy S8+ 64GB",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hello, I would like to rent a Galaxy S8 64GB.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 30,
+            "end": 44,
+            "value": "Galaxy S8 64GB",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hello,  I would like to rent a Watch Ambit 3.  Regards, Jacob",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 56,
+            "end": 61,
+            "value": "Jacob",
+            "entity": "name"
+          },
+          {
+            "start": 31,
+            "end": 44,
+            "value": "Watch Ambit 3",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hey, we broke our computer and would like to take an Apple computer.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 53,
+            "end": 58,
+            "value": "Apple",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "Best regards, Harry",
+        "intent": "name_finding",
+        "entities": [
+          {
+            "start": 14,
+            "end": 19,
+            "value": "Harry",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "Hello. I want to rent a vacuum cleaner for a day. How much will it cost? When and w here can I take it? Thank you.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 24,
+            "end": 38,
+            "value": "vacuum cleaner",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Good morning.  I have lost my phone. I need a smartphone until I buy a new one. How much will cost to rent an Iphone per day?  Thank you.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 110,
+            "end": 116,
+            "value": "Iphone",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hello, I would like to rent a Qbo Milk Master. Cheers, Philip",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 55,
+            "end": 61,
+            "value": "Philip",
+            "entity": "name"
+          },
+          {
+            "start": 30,
+            "end": 45,
+            "value": "Qbo Milk Master",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hi, I want to borrow MacBook Air 13. Do you have it and how much does it cost for one day?",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 21,
+            "end": 35,
+            "value": "MacBook Air 13",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Do you have any Apple phones?",
+        "intent": "question",
+        "entities": [
+          {
+            "start": 16,
+            "end": 21,
+            "value": "Apple",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "Are there any Samsung phones available?",
+        "intent": "question",
+        "entities": [
+          {
+            "start": 14,
+            "end": 21,
+            "value": "Samsung",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "Do you have any smart watches available?",
+        "intent": "question",
+        "entities": [
+          {
+            "start": 22,
+            "end": 27,
+            "value": "watch",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hello, I am in a vacation and want to rent a Drone BEBOP 2. Best Regards, Felix Isensee",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 45,
+            "end": 58,
+            "value": "Drone BEBOP 2",
+            "entity": "device"
+          },
+          {
+            "start": 74,
+            "end": 87,
+            "value": "Felix Isensee",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "I would like to borrow a Robotic Vacuum Cleaner POWERbot VR20J9259U/EG. Thanks. James Joyce",
+        "intent": "question",
+        "entities": [
+          {
+            "start": 26,
+            "end": 70,
+            "value": "Robotic Vacuum Cleaner POWERbot VR20J9259U/EG",
+            "entity": "device"
+          },
+          {
+            "start": 80,
+            "end": 91,
+            "value": "James Joyce",
+            "entity": "name"
+          }
+        ]
+      },
+      {
+        "text": "I want to borrow a Samsung Galaxy S23.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 19,
+            "end": 37,
+            "value": "Samsung Galaxy S23",
+            "entity": "device"
+          },
+          {
+            "start": 19,
+            "end": 26,
+            "value": "Samsung",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "I want to take a Apple watch",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 17,
+            "end": 22,
+            "value": "Apple",
+            "entity": "brand"
+          },
+          {
+            "start": 17,
+            "end": 28,
+            "value": "Apple watch",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Do you have a VR headset?",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 14,
+            "end": 16,
+            "value": "VR",
+            "entity": "device"
+          },
+          {
+            "start": 14,
+            "end": 16,
+            "value": "VR headset",
+            "entity": "device"
+          }
+        ]
+      }
+    ]
+  }
+}
