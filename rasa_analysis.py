@@ -18,10 +18,10 @@ def train(data, config, model_dir):
 def run():
     interpreter = Interpreter.load('models/default/request_bot',
                                    RasaNLUConfig('config_spacy.json'))
-    pprint.pprint(interpreter.parse(u'Hello, I would like to rent a Samsung phone.')[:2])
-    pprint.pprint(interpreter.parse(u'Hello, I would like to rent a Samsung Galaxy S7. Regards, Dave')[:2])
+    pprint.pprint(interpreter.parse(u'Hello, I would like to rent a Samsung phone. Do you have any? Cheers, Marx Frankenstein'))
+    pprint.pprint(interpreter.parse(u'Hello, I want to rent a Galaxy S7. Regards, Dave'))
 
 
 if __name__ == '__main__':
-    # train('./data/data.json', './config_spacy.json', './models/')
+    train('./data/data1.json', './config_spacy.json', './models/')
     run()
