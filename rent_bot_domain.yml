@@ -22,8 +22,6 @@ templates:
   utter_goodbye:
     - 'Thank you for using our service.'
     - 'For any issues please contact us.'
-  utter_ask_unamb:
-    - 'Which one do you want?'
 
 
 actions:
