@@ -104,14 +104,14 @@
         ]
       },
       {
-        "text": "Hey, we broke our computer and would like to take an Apple computer.",
+        "text": "Hey, we broke our computer and would like to take a MacBook Air.",
         "intent": "request",
         "entities": [
           {
-            "start": 53,
-            "end": 58,
-            "value": "Apple",
-            "entity": "brand"
+            "start": 52,
+            "end": 63,
+            "value": "MacBook Air",
+            "entity": "device"
           }
         ]
       },
@@ -152,15 +152,9 @@
         ]
       },
       {
-        "text": "Hello, I would like to rent a Qbo Milk Master. Cheers, Philip",
+        "text": "Hello, I would like to rent a Qbo Milk Master.",
         "intent": "request",
         "entities": [
-          {
-            "start": 55,
-            "end": 61,
-            "value": "Philip",
-            "entity": "name"
-          },
           {
             "start": 30,
             "end": 45,
@@ -182,32 +176,32 @@
         ]
       },
       {
-        "text": "Do you have any Apple phones?",
-        "intent": "question",
+        "text": "Do you have any iPhone 7  phones?",
+        "intent": "request",
         "entities": [
           {
             "start": 16,
-            "end": 21,
-            "value": "Apple",
-            "entity": "brand"
+            "end": 24,
+            "value": "iPhone 7",
+            "entity": "device"
           }
         ]
       },
       {
-        "text": "Are there any Samsung phones available?",
-        "intent": "question",
+        "text": "Are there any Apple watches phones available?",
+        "intent": "request",
         "entities": [
           {
             "start": 14,
-            "end": 21,
-            "value": "Samsung",
-            "entity": "brand"
+            "end": 25,
+            "value": "Apple watch",
+            "entity": "device"
           }
         ]
       },
       {
         "text": "Do you have any smart watches available?",
-        "intent": "question",
+        "intent": "request",
         "entities": [
           {
             "start": 22,
@@ -218,7 +212,7 @@
         ]
       },
       {
-        "text": "Hello, I am in a vacation and want to rent a Drone BEBOP 2. Best Regards, Felix Isensee",
+        "text": "Hello, I am in a vacation and want to rent a Drone BEBOP 2.",
         "intent": "request",
         "entities": [
           {
@@ -226,30 +220,24 @@
             "end": 58,
             "value": "Drone BEBOP 2",
             "entity": "device"
-          },
-          {
-            "start": 74,
-            "end": 87,
-            "value": "Felix Isensee",
-            "entity": "name"
           }
         ]
       },
       {
-        "text": "I would like to borrow a Robotic Vacuum Cleaner POWERbot VR20J9259U/EG. Thanks. James Joyce",
-        "intent": "question",
+        "text": "I would like to borrow a Robotic Vacuum Cleaner POWERbot VR20J9259U/EG. Regards Mark Masnson",
+        "intent": "request",
         "entities": [
           {
-            "start": 26,
+            "start": 80,
+            "end": 92,
+            "value": "Mark Masnson",
+            "entity": "name"
+          },
+          {
+            "start": 25,
             "end": 70,
             "value": "Robotic Vacuum Cleaner POWERbot VR20J9259U/EG",
             "entity": "device"
-          },
-          {
-            "start": 80,
-            "end": 91,
-            "value": "James Joyce",
-            "entity": "name"
           }
         ]
       },
@@ -262,12 +250,6 @@
             "end": 37,
             "value": "Samsung Galaxy S23",
             "entity": "device"
-          },
-          {
-            "start": 19,
-            "end": 26,
-            "value": "Samsung",
-            "entity": "brand"
           }
         ]
       },
@@ -275,12 +257,6 @@
         "text": "I want to take a Apple watch",
         "intent": "request",
         "entities": [
-          {
-            "start": 17,
-            "end": 22,
-            "value": "Apple",
-            "entity": "brand"
-          },
           {
             "start": 17,
             "end": 28,
@@ -304,6 +280,54 @@
             "end": 16,
             "value": "VR headset",
             "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I will rent a coffee machine.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 14,
+            "end": 28,
+            "value": "coffee machine",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hi, I want to take a Tchibo coffee machine. Do you have any?",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 21,
+            "end": 27,
+            "value": "Tchibo coffee machine",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Do you have any apple phones?",
+        "intent": "brand_request",
+        "entities": [
+          {
+            "start": 16,
+            "end": 27,
+            "value": "apple phone",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "Do you have a Apple computer?",
+        "intent": "brand_request",
+        "entities": [
+          {
+            "start": 14,
+            "end": 28,
+            "value": "Apple computer",
+            "entity": "brand"
           }
         ]
       }

@@ -1,0 +1,33 @@
+slots:
+  device:
+    type: text
+  brand:
+    type: text
+
+
+intents:
+ - name_finding
+ - request
+ - brand_request
+
+
+entities:
+ - name
+ - device
+ - brand
+
+templates:
+  utter_norm_response:
+    - 'Hello! Your order will be available at Strasse 23.'
+  utter_goodbye:
+    - 'Thank you for using our service.'
+    - 'For any issues please contact us.'
+  utter_ask_unamb:
+    - 'Which one do you want?'
+
+
+actions:
+ - utter_norm_response
+ - utter_goodbye
+ - utter_ask_unamb
+ - actions.ActionRequest
