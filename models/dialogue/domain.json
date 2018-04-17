@@ -1,0 +1,15 @@
+{
+  "features": [
+    "intent_request",
+    "intent_greet",
+    "intent_goodbye",
+    "entity_device",
+    "entity_time",
+    "slot_device_0",
+    "prev_action_listen",
+    "prev_action_restart",
+    "prev_utter_greet",
+    "prev_utter_goodbye",
+    "prev_action_request"
+  ]
+}

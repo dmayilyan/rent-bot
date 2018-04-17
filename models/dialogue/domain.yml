@@ -1,0 +1,29 @@
+action_factory: null
+action_names:
+- utter_greet
+- utter_goodbye
+- action_request
+actions:
+- utter_greet
+- utter_goodbye
+- actions.ActionRequest
+config:
+  store_entities_as_slots: true
+entities:
+- device
+- time
+intents:
+- request
+- greet
+- goodbye
+slots:
+  device:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+templates:
+  utter_goodbye:
+  - text: Thank you for using our service.
+  utter_greet:
+  - text: Hello. How can we help?
+  - text: Can I be helpful?
+topics: []

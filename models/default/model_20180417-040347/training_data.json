@@ -1,0 +1,412 @@
+{
+  "rasa_nlu_data": {
+    "entity_synonyms": [],
+    "regex_features": [],
+    "common_examples": [
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 17,
+            "end": 26,
+            "value": "Galaxy S3"
+          },
+          {
+            "entity": "time",
+            "start": 42,
+            "end": 52,
+            "value": "two months"
+          }
+        ],
+        "intent": "request",
+        "text": "I want to rent a Galaxy S3. I want it for two months."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 25,
+            "end": 44,
+            "value": "iPhone 7 Plus 128GB"
+          },
+          {
+            "entity": "time",
+            "start": 49,
+            "end": 57,
+            "value": "3 months"
+          }
+        ],
+        "intent": "request",
+        "text": "I would like to borrow a iPhone 7 Plus 128GB for 3 months."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 53,
+            "end": 68,
+            "value": "Samsung Galaxy S8+ 64GB"
+          }
+        ],
+        "intent": "request",
+        "text": "I broke my computer and would like to rent a Samsung Galaxy S8+ 64GB?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 30,
+            "end": 44,
+            "value": "Galaxy S8 64GB"
+          }
+        ],
+        "intent": "request",
+        "text": "Hello, I would like to rent a Galaxy S8 64GB."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 31,
+            "end": 44,
+            "value": "Watch Ambit 3"
+          }
+        ],
+        "intent": "request",
+        "text": "Hello,  I would like to rent a Watch Ambit 3.  Regards, Jacob"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 52,
+            "end": 63,
+            "value": "MacBook Air"
+          }
+        ],
+        "intent": "request",
+        "text": "Hey, we broke our computer and would like to take a MacBook Air."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 24,
+            "end": 38,
+            "value": "vacuum cleaner"
+          },
+          {
+            "entity": "time",
+            "start": 43,
+            "end": 48,
+            "value": "a day"
+          }
+        ],
+        "intent": "request",
+        "text": "Hello. I want to rent a vacuum cleaner for a day. How much will it cost? When and w here can I take it? Thank you."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 110,
+            "end": 116,
+            "value": "Iphone"
+          },
+          {
+            "entity": "time",
+            "start": 117,
+            "end": 124,
+            "value": "per day"
+          }
+        ],
+        "intent": "request",
+        "text": "Good morning.  I have lost my phone. I need a smartphone until I buy a new one. How much will cost to rent an Iphone per day?  Thank you."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 30,
+            "end": 45,
+            "value": "Qbo Milk Master"
+          }
+        ],
+        "intent": "request",
+        "text": "Hello, I would like to rent a Qbo Milk Master."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 21,
+            "end": 35,
+            "value": "MacBook Air 13"
+          },
+          {
+            "entity": "time",
+            "start": 82,
+            "end": 89,
+            "value": "one day"
+          }
+        ],
+        "intent": "request",
+        "text": "Hi, I want to borrow MacBook Air 13. Do you have it and how much does it cost for one day?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 16,
+            "end": 24,
+            "value": "iPhone 7"
+          }
+        ],
+        "intent": "request",
+        "text": "Do you have any iPhone 7  phones?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 16,
+            "end": 31,
+            "value": "Qbo Milk Master"
+          }
+        ],
+        "intent": "request",
+        "text": "Do you have any Qbo Milk Master available?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 16,
+            "end": 29,
+            "value": "smart watches"
+          }
+        ],
+        "intent": "request",
+        "text": "Do you have any smart watches available?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 45,
+            "end": 58,
+            "value": "Drone BEBOP 2"
+          }
+        ],
+        "intent": "request",
+        "text": "Hello, I am in a vacation and want to rent a Drone BEBOP 2."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 25,
+            "end": 70,
+            "value": "Robotic Vacuum Cleaner POWERbot VR20J9259U/EG"
+          }
+        ],
+        "intent": "request",
+        "text": "I would like to borrow a Robotic Vacuum Cleaner POWERbot VR20J9259U/EG. Regards Mark Masnson"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 19,
+            "end": 37,
+            "value": "Samsung Galaxy S23"
+          }
+        ],
+        "intent": "request",
+        "text": "I want to borrow a Samsung Galaxy S23."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 18,
+            "end": 29,
+            "value": "Apple watch"
+          }
+        ],
+        "intent": "request",
+        "text": "I want to take an Apple watch."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 14,
+            "end": 16,
+            "value": "VR"
+          }
+        ],
+        "intent": "request",
+        "text": "Do you have a VR headset?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 14,
+            "end": 28,
+            "value": "coffee machine"
+          }
+        ],
+        "intent": "request",
+        "text": "I will rent a coffee machine."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 21,
+            "end": 27,
+            "value": "Tchibo coffee machine"
+          }
+        ],
+        "intent": "request",
+        "text": "Hi, I want to take a Tchibo coffee machine. Do you have any?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 16,
+            "end": 28,
+            "value": "apple phones"
+          }
+        ],
+        "intent": "request",
+        "text": "Do you have any apple phones?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 14,
+            "end": 28,
+            "value": "Apple computer"
+          }
+        ],
+        "intent": "request",
+        "text": "Do you have a Apple computer?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 45,
+            "end": 68,
+            "value": "POWERbot VR20J9020UR/EG"
+          }
+        ],
+        "intent": "request",
+        "text": "Hey, I want to rent a Robotic Vacuum Cleaner POWERbot VR20J9020UR/EG."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 16,
+            "end": 40,
+            "value": "Virtual Reality headsets"
+          }
+        ],
+        "intent": "request",
+        "text": "Do you have any Virtual Reality headsets?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 25,
+            "end": 34,
+            "value": "Alexa Dot"
+          },
+          {
+            "entity": "time",
+            "start": 39,
+            "end": 45,
+            "value": "a week"
+          }
+        ],
+        "intent": "request",
+        "text": "Hey, we want to borrow a Alexa Dot for a week. How much will it cost?"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 18,
+            "end": 29,
+            "value": "Apple Watch"
+          }
+        ],
+        "intent": "request",
+        "text": "I want to rent an Apple Watch. Do you have any?"
+      },
+      {
+        "entities": [],
+        "intent": "greet",
+        "text": "Hello"
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 11,
+            "end": 22,
+            "value": "Lenovo YOGA"
+          }
+        ],
+        "intent": "request",
+        "text": "I want the Lenovo YOGA."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 12,
+            "end": 28,
+            "value": "Polar Watch V800"
+          }
+        ],
+        "intent": "request",
+        "text": "I will have Polar Watch V800."
+      },
+      {
+        "entities": [
+          {
+            "entity": "device",
+            "start": 12,
+            "end": 46,
+            "value": "MacBook 12\" M-5Y31, 8GB RAM, 516GB"
+          }
+        ],
+        "intent": "request",
+        "text": "I will take MacBook 12\" M-5Y31, 8GB RAM, 516GB. Thanks."
+      },
+      {
+        "entities": [],
+        "intent": "greet",
+        "text": "Hey"
+      },
+      {
+        "entities": [],
+        "intent": "greet",
+        "text": "Hallo"
+      },
+      {
+        "entities": [],
+        "intent": "greet",
+        "text": "Hi"
+      }
+    ]
+  }
+}
