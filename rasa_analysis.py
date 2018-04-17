@@ -50,10 +50,17 @@ def run():
                                    RasaNLUConfig('config_spacy.json'))
     pprint.pprint(interpreter.parse(u'Hello, I would like to rent a Samsung phone. Do you have any? Cheers, Marx Frankenstein'))
 
-    result = interpreter.parse(u'Hello, I want to rent a Galaxy S7. Regards, Dave')
-    print(type(result['entities']))
+    sample_list = [u'Hello, I would to rent a Galaxy S8 64GB. I would like to have it for a month. How much will it cost? Best regards,Dezdemona',
+                   u'Hello. My name is Otello and I would like to rent a Alexa Echo for several days. Thanks in advance,Ben',
+                   u'Hello, I would like to rent a Watch Ambit 3. Regards, Jacob']
+
+# 'one of your' case
+    for text in sample_list:
+        result = interpreter.parse(text)
+        print(type(result['entities']))
     # pprint.pprint(result)
-    print(extract_info(result['entities']))
+        print(extract_info(result['entities']))
+        # compile_answer()
 
 
 def extract_info(result):
@@ -71,6 +78,6 @@ def compile_answer():
 
 
 if __name__ == '__main__':
-    # train('./data/data1.json', './config_spacy.json', './models/')
-    run()
-    compile_answer()
+    train('./data/data.json', './config_spacy.json', './models/')
+    # run()
+    

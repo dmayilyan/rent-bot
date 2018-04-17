@@ -438,6 +438,28 @@
         "text": "Goodbye",
         "intent": "goodbye",
         "entities": []
+      },
+      {
+        "text": "Thank you, goodbye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "Regards, John",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "I want to rent Watch 38mm",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 15,
+            "end": 25,
+            "value": "Watch 38mm",
+            "entity": "device"
+          }
+        ]
       }
     ]
   }

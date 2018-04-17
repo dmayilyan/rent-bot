@@ -30,20 +30,31 @@
 * goodbye
     - utter_goodbye
 
-## Generated Story -9141389109256419706
+## story 07
+* request{"device": "Vive"}
+    - slot{"device": "Vive"}
+    - action_request
+    - slot{"device": "Vive"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## story 08
 * greet
     - utter_greet
 * request
     - action_request
-* request
+    - slot{"device": " "}
+    - export
+
+## Generated Story 7590461091971622044
+* greet
+    - utter_greet
+* request{"device": "iphone 7"}
+    - slot{"device": "iphone 7"}
     - action_request
-* request
-    - action_request
-* request
-    - action_request
-* request{"device": "iphone 7 plus 128gb"}
-    - slot{"device": "iphone 7 plus 128gb"}
-    - action_request
-    - slot{"device": "iphone 7 plus 128gb"}
+    - slot{"device": "iphone 7"}
 * goodbye
     - utter_goodbye
+    - export
+
