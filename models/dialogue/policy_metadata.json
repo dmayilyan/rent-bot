@@ -1,14 +1,18 @@
 {
+  "max_history": 3,
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ],
   "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
-  "rasa_core": "0.8.5",
   "action_fingerprints": {
+    "utter_goodbye": {
+      "slots": []
+    },
     "action_listen": {
       "slots": [
         "device"
       ]
-    },
-    "utter_goodbye": {
-      "slots": []
     },
     "action_request": {
       "slots": [
@@ -16,9 +20,5 @@
       ]
     }
   },
-  "policy_names": [
-    "rasa_core.policies.memoization.MemoizationPolicy",
-    "rasa_core.policies.keras_policy.KerasPolicy"
-  ],
-  "max_history": 3
+  "rasa_core": "0.8.5"
 }

@@ -55,7 +55,7 @@ class ActionRequest(Action):
         request = tracker.get_slot('device')
         if request is None:
             dispatcher.utter_message('No device found. Try again!')
-            return [SlotSet('device', ' ')]
+            return [SlotSet('device', [])]
         matches = self.check_in_dict(request)
         # matches = self.check_in_dict(text)
 
@@ -70,7 +70,7 @@ class ActionRequest(Action):
             # print(response)
 
         dispatcher.utter_message(response)
-        return [SlotSet('device', request)]
+        return [SlotSet('device', request if request is not None else [])]
 
 
 if __name__ == '__main__':
