@@ -53,45 +53,70 @@ time_period = {('1', 'one', 'a'): 1,
 
 class ActionBrandRequest(Action):
     def name(self):
-        return 'action_brandrequest'
+        return 'action_brand_request'
 
-    def check_in_dict(self, brand_req):
+    def _replace_syns(self, matches):
+        syns = {'laptop': 'comput',
+                'phon': 'phone',
+                'fon': 'phone'}
+
+        for item in matches:
+            if item in syns.keys():
+                matches = (matches[0], item.replace(item, syns[item]))
+
+        return matches
+
+    def _check_in_dict(self, brand_req):
         '''
         Checking for brand devices
         '''
         matches = []
+        br = brand_req[0].lower()
+        cat = brand_req[1].lower()
+        print(brand_req)
         for item in devices.keys():
-            if brand_req.lower() in item[2].lower():
+            is_brand = False
+            is_category = False
+            
+            is_brand = br in item[2].lower()
+            is_category = cat in item[3].lower()
+            # make_response()
+            # print(is_brand, is_category)
+            if is_brand and is_category:
                 matches.append(item[1])
+            # elif is_brand and not is_category:
+            #     matches.append(item[1])
 
+        print(matches)
         return matches
 
-    def get_brand(self, brand_req):
+    def _get_brand(self, brand_req):
         '''
         Getting the brand
         '''
-        pattern = r'(\w+) +(laptops*|phones*|comput.*)'
+        pattern = r'(\w+) +(laptop|phone|comput|tablet)+[ers]*'
         regex = re.compile(pattern)
         result = regex.findall(brand_req)
 
-        print(result)
-        return(result)
-        
-    def run(self, text):
-    # def run(self, dispatcher, tracker, domain):
-        # try:
-        # brand_req = tracker.get_slot('device')
-        # brand = self.get_brand(brand_req)
-        brand = self.get_brand(text)
-        matches = self.check_in_dict(brand)
-        # except AttributeError:
-        #     print('Brand not found.')
+        return result[0]
 
-        response = '\033[0;34mFor the {brand} we have these devices:\n{bl}\033[0m'.format(brand=brand.title(), bl=matches)
-        print(response)
+    # def run(self, text):
+    def run(self, dispatcher, tracker, domain):
+        try:
+            brand_req = tracker.get_slot('brand')
+            brand = self._get_brand(brand_req)
+            # brand = self._get_brand(text)
+            brand = self._replace_syns(brand)
+            matches = self._check_in_dict(brand)
+            print(matches)
+        except AttributeError:
+            print('Brand not found.')
+
+        response = '\033[0;34mFor the {brand} we have these devices:\n{bl}\033[0m'.format(brand=brand[0].title(), bl=matches)
+        # print(response)
 
         dispatcher.utter_message(response)
-        return [SlotSet('device', brand if brand is not None else [])]
+        return [SlotSet('brand', brand if brand is not None else [])]
 
 class ActionRequest(Action):
     def name(self):
@@ -166,12 +191,14 @@ if __name__ == '__main__':
     t3 = 'Samsung phones'
     t4 = 'lenovo computer'
     test = ActionBrandRequest()
-    # test.run(text)
-    # test.run(t1)
-    # test.run(t2)
-    # test.run(t3)
-    test.get_brand(text)
-    test.get_brand(t1)
-    test.get_brand(t2)
-    test.get_brand(t3)
-    test.get_brand(t4)
+    test.run(text)
+    test.run(t1)
+    test.run(t2)
+    test.run(t3)
+    test.run(t4)
+    # test.check_in_dict(text)
+    # test.check_in_dict(t1)
+    # test.check_in_dict(t2)
+
+    brand = test._get_brand(t2)
+    # test.check_in_dict(t4)

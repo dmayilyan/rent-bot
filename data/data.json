@@ -249,13 +249,13 @@
       },
       {
         "text": "I will rent a coffee machine.",
-        "intent": "request",
+        "intent": "brand_request",
         "entities": [
           {
             "start": 14,
             "end": 28,
             "value": "coffee machine",
-            "entity": "device"
+            "entity": "brand"
           }
         ]
       },
@@ -704,6 +704,66 @@
             "end": 19,
             "value": "S8 64GB",
             "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I want apple laptop",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 7,
+            "end": 19,
+            "value": "apple laptop",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "I want Samsung phone",
+        "intent": "brand_request",
+        "entities": [
+          {
+            "start": 7,
+            "end": 20,
+            "value": "Samsung phone",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "I would like to rent a Apple phone",
+        "intent": "brand_request",
+        "entities": [
+          {
+            "start": 23,
+            "end": 34,
+            "value": "Apple phone",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "Do you have any lenovo computers?",
+        "intent": "brand_request",
+        "entities": [
+          {
+            "start": 16,
+            "end": 32,
+            "value": "lenovo computers",
+            "entity": "brand"
+          }
+        ]
+      },
+      {
+        "text": "Do you have apple phones?",
+        "intent": "brand_request",
+        "entities": [
+          {
+            "start": 12,
+            "end": 24,
+            "value": "apple phones",
+            "entity": "brand"
           }
         ]
       }
