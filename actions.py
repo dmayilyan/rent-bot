@@ -5,6 +5,8 @@
 from rasa_core.actions.action import Action
 from rasa_core.events import SlotSet
 
+import re
+
 devices = {(1, 'iPhone 7 128GB', 'Apple', 'Phones & Tablets'): '44.99',
            (2, 'iPhone 7 32GB', 'Apple', 'Phones & Tablets'): '39.99',
            (3, 'iPhone 7 Plus 128GB', 'Apple', 'Phones & Tablets'): '49.99',
@@ -31,6 +33,18 @@ devices = {(1, 'iPhone 7 128GB', 'Apple', 'Phones & Tablets'): '44.99',
            (24, 'Robotic Vacuum Cleaner POWERbot VR20J9020UR/EG', 'Samsung', 'Smart Home'): '39.99',
            (25, 'Robotic Vacuum Cleaner POWERbot VR20J9259U/EG', 'Samsung', 'Smart Home'): '39.99'}
 
+time_period = {('1', 'one', ''): 1,
+               ('2', 'two'): 2,
+               ('3', 'three'): 3,
+               ('4', 'four'): 4,
+               ('5', 'five'): 5,
+               ('6', 'six'): 6,
+               ('7', 'seven'): 7,
+               ('8', 'eight'): 8,
+               ('9', 'nine'): 9,
+               ('10', 'ten'): 10,
+               ('11', 'eleven'): 11,
+               ('12', 'twelve'): 12}
 
 # class ActionUnclear(Action):
 #     def name(self):
@@ -50,30 +64,46 @@ class ActionRequest(Action):
         # print(matches)
         return matches
 
-    def run(self, dispatcher, tracker, domain):
+    def get_time_period(self, text):
+        month_pat = r'([0-9a-zA-Z]+) month.'
+        regex = re.compile(month_pat)
+        result = regex.findall(text)
+        if result != []:
+            for k_tup in time_period.keys():
+                if result[0] in k_tup:
+                    return time_period[k_tup]
+        else:
+            return 1
+
     # def run(self, text):
+    def run(self, dispatcher, tracker, domain):
         request = tracker.get_slot('device')
-        if request is None:
-            dispatcher.utter_message('No device found. Try again!')
-            return [SlotSet('device', [])]
         matches = self.check_in_dict(request)
+        # Checking for how long is the rent request
+        time_req = tracker.get_slot('time')
+        time_period = self.get_time_period(time_req)
         # matches = self.check_in_dict(text)
+        # time_period = self.get_time_period(text)
 
         if len(matches) == 0:
             response = '\033[0;34mWe do not have what you requested. Do you want any other device?\033[0m'
             # print(response)
         elif len(matches) == 1:
-            response  = '\033[0;34mWe do have {req} for {price} a month.\033[0m'.format(req=matches[0][0].title(), price=matches[0][1])
+            response  = '\033[0;34mWe do have {req} for {price} overall.\033[0m'.format(req=matches[0][0].title(), price=matches[0][1] * time_period)
             # print(response)
         elif len(matches) > 1:
             response = '\033[0;34mWe have several devices matching your request.\nWhich one do you want?\n{}\033[0m'.format(matches)
             # print(response)
 
-        dispatcher.utter_message(response)
-        return [SlotSet('device', request if request is not None else [])]
+        # dispatcher.utter_message(response)
+        # return [SlotSet('device', request if request is not None else [])]
 
 
 if __name__ == '__main__':
-    text = 'iphone 7'
+    text = 'two months'
+    text1 = 'twelve monthes'
+    text2 = 'month'
     test = ActionRequest()
     test.run(text)
+    test.run(text1)
+    test.run(text2)

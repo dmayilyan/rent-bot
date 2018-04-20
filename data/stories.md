@@ -58,3 +58,71 @@
     - utter_goodbye
     - export
 
+## Generated Story 4403401374570581893
+* request{"device": "iphone"}
+    - slot{"device": "iphone"}
+    - action_request
+    - slot{"device": "iphone"}
+* request{"device": "iphone 7 128gb"}
+    - slot{"device": "iphone 7 128gb"}
+    - action_request
+    - slot{"device": "iphone 7 128gb"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story -3873423100110630804 of not found device
+* request
+    - utter_not_found
+* request{"device": "galaxy s3"}
+    - slot{"device": "galaxy s3"}
+    - action_request
+    - slot{"device": "galaxy s3"}
+* request{"device": "iphone 7"}
+    - slot{"device": "iphone 7"}
+    - action_request
+    - slot{"device": "iphone 7"}
+* request{"device": "iphone 7 32gb"}
+    - slot{"device": "iphone 7 32gb"}
+    - action_request
+    - slot{"device": "iphone 7 32gb"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story 8835672825968248331
+* request
+    - utter_not_found
+* request{"device": "vive"}
+    - slot{"device": "vive"}
+    - action_request
+    - slot{"device": "vive"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story 7663686698507395873
+* request{"device": "iphone 7 32gb"}
+    - slot{"device": "iphone 7 32gb"}
+    - action_request
+    - slot{"device": "iphone 7 32gb"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story 1487704528182060128
+* request{"device": "macbook"}
+    - slot{"device": "macbook"}
+    - action_request
+    - slot{"device": "macbook"}
+* request{"device": "macbook air"}
+    - slot{"device": "macbook air"}
+    - action_request
+    - slot{"device": "macbook air"}
+* request{"device": "macbook air 11\" i7"}
+    - slot{"device": "macbook air 11\" i7"}
+    - action_request
+    - slot{"device": "macbook air 11\" i7"}
+* goodbye
+    - utter_goodbye
+    - export

@@ -460,6 +460,90 @@
             "entity": "device"
           }
         ]
+      },
+      {
+        "text": "I want iphone",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 7,
+            "end": 13,
+            "value": "iphone",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I will have S8",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 12,
+            "end": 14,
+            "value": "S8",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I want a iphone",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 9,
+            "end": 15,
+            "value": "iphone",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I would like to rent Vive",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 21,
+            "end": 25,
+            "value": "Vive",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Hey, I want to rent Drone BEBOP 2",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 20,
+            "end": 33,
+            "value": "Drone BEBOP 2",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I want to rent a Apple Iphone 7",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 17,
+            "end": 31,
+            "value": "Apple Iphone 7",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I want a Watch V800",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 9,
+            "end": 19,
+            "value": "Watch V800",
+            "entity": "device"
+          }
+        ]
       }
     ]
   }

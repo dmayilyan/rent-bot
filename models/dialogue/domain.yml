@@ -2,10 +2,12 @@ action_factory: null
 action_names:
 - utter_greet
 - utter_goodbye
+- utter_not_found
 - action_request
 actions:
 - utter_greet
 - utter_goodbye
+- utter_not_found
 - actions.ActionRequest
 config:
   store_entities_as_slots: true
@@ -26,4 +28,6 @@ templates:
   utter_greet:
   - text: Hello. How can we help?
   - text: Can I be helpful?
+  utter_not_found:
+  - text: The device you requested is not found. Choose something else.
 topics: []

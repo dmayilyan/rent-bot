@@ -10,6 +10,7 @@
     "prev_action_restart",
     "prev_utter_greet",
     "prev_utter_goodbye",
+    "prev_utter_not_found",
     "prev_action_request"
   ]
 }

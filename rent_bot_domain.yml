@@ -1,6 +1,8 @@
 slots:
   device:
     type: text
+  time:
+    type: text
 
 intents:
  - request
@@ -18,9 +20,12 @@ templates:
     - 'Can I be helpful?'
   utter_goodbye:
     - 'Thank you for using our service.'
+  utter_not_found:
+    - 'The device you requested is not found. Choose something else.'
 
 
 actions:
  - utter_greet
  - utter_goodbye
+ - utter_not_found
  - actions.ActionRequest
