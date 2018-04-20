@@ -83,8 +83,12 @@ class ActionRequest(Action):
 
     # def run(self, text):
     def run(self, dispatcher, tracker, domain):
-        request = tracker.get_slot('device')
-        matches = self.check_in_dict(request)
+        matches = []
+        try:
+            request = tracker.get_slot('device')
+            matches = self.check_in_dict(request)
+        except AttributeError:
+            print('Device not found.')
         # Checking for how long is the rent request
         try:
             time_req = tracker.get_slot('time')

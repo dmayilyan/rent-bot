@@ -646,6 +646,66 @@
             "entity": "device"
           }
         ]
+      },
+      {
+        "text": "I want to rent Galaxy S8+ 64GB",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 15,
+            "end": 30,
+            "value": "Galaxy S8+ 64GB",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I want S8+",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 7,
+            "end": 10,
+            "value": "S8+",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I will take Galaxy S8 64GB for 5 months.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 31,
+            "end": 39,
+            "value": "5 months",
+            "entity": "time"
+          },
+          {
+            "start": 12,
+            "end": 26,
+            "value": "Galaxy S8 64GB",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "I will ahve S8 64GB for a month.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 24,
+            "end": 31,
+            "value": "a month",
+            "entity": "time"
+          },
+          {
+            "start": 12,
+            "end": 19,
+            "value": "S8 64GB",
+            "entity": "device"
+          }
+        ]
       }
     ]
   }

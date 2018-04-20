@@ -160,3 +160,22 @@
     - utter_goodbye
     - export
 
+## Generated Story -6883129069017709789
+* greet
+    - utter_greet
+* request{"device": "Galaxy S8+ 64GB"}
+    - slot{"device": "Galaxy S8+ 64GB"}
+    - action_request
+    - slot{"device": "Galaxy S8+ 64GB"}
+* goodbye
+    - export
+
+## Generated Story -6883129069017709789
+* greet
+    - utter_greet
+* request{"device": "S8+}
+    - slot{"device": "S8+"}
+    - action_request
+    - slot{"device": "S8+"}
+* goodbye
+    - export
