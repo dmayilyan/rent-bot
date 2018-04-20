@@ -1,10 +1,9 @@
 {
   "rasa_nlu_data": {
+    "regex_features": [],
     "entity_synonyms": [],
     "common_examples": [
       {
-        "text": "I want to rent a Galaxy S3. I want it for two months.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -18,11 +17,11 @@
             "start": 42,
             "value": "two months"
           }
-        ]
+        ],
+        "text": "I want to rent a Galaxy S3. I want it for two months.",
+        "intent": "request"
       },
       {
-        "text": "I would like to borrow a iPhone 7 Plus 128GB for 3 months.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -36,11 +35,11 @@
             "start": 49,
             "value": "3 months"
           }
-        ]
+        ],
+        "text": "I would like to borrow a iPhone 7 Plus 128GB for 3 months.",
+        "intent": "request"
       },
       {
-        "text": "I broke my computer and would like to rent a Samsung Galaxy S8+ 64GB?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -48,11 +47,11 @@
             "start": 53,
             "value": "Samsung Galaxy S8+ 64GB"
           }
-        ]
+        ],
+        "text": "I broke my computer and would like to rent a Samsung Galaxy S8+ 64GB?",
+        "intent": "request"
       },
       {
-        "text": "Hello, I would like to rent a Galaxy S8 64GB.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -60,11 +59,11 @@
             "start": 30,
             "value": "Galaxy S8 64GB"
           }
-        ]
+        ],
+        "text": "Hello, I would like to rent a Galaxy S8 64GB.",
+        "intent": "request"
       },
       {
-        "text": "Hello,  I would like to rent a Watch Ambit 3.  Regards, Jacob",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -72,11 +71,11 @@
             "start": 31,
             "value": "Watch Ambit 3"
           }
-        ]
+        ],
+        "text": "Hello,  I would like to rent a Watch Ambit 3.  Regards, Jacob",
+        "intent": "request"
       },
       {
-        "text": "Hey, we broke our computer and would like to take a MacBook Air.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -84,11 +83,11 @@
             "start": 52,
             "value": "MacBook Air"
           }
-        ]
+        ],
+        "text": "Hey, we broke our computer and would like to take a MacBook Air.",
+        "intent": "request"
       },
       {
-        "text": "Hello. I want to rent a vacuum cleaner for a day. How much will it cost? When and w here can I take it? Thank you.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -102,11 +101,11 @@
             "start": 43,
             "value": "a day"
           }
-        ]
+        ],
+        "text": "Hello. I want to rent a vacuum cleaner for a day. How much will it cost? When and w here can I take it? Thank you.",
+        "intent": "request"
       },
       {
-        "text": "Good morning.  I have lost my phone. I need a smartphone until I buy a new one. How much will cost to rent an Iphone for three months?  Thank you.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -120,11 +119,11 @@
             "start": 121,
             "value": "three months"
           }
-        ]
+        ],
+        "text": "Good morning.  I have lost my phone. I need a smartphone until I buy a new one. How much will cost to rent an Iphone for three months?  Thank you.",
+        "intent": "request"
       },
       {
-        "text": "Hello, I would like to rent a Qbo Milk Master.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -132,11 +131,11 @@
             "start": 30,
             "value": "Qbo Milk Master"
           }
-        ]
+        ],
+        "text": "Hello, I would like to rent a Qbo Milk Master.",
+        "intent": "request"
       },
       {
-        "text": "Hi, I want to borrow MacBook Air 13. Do you have it and how much does it cost for one month?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -150,11 +149,11 @@
             "start": 82,
             "value": "one month"
           }
-        ]
+        ],
+        "text": "Hi, I want to borrow MacBook Air 13. Do you have it and how much does it cost for one month?",
+        "intent": "request"
       },
       {
-        "text": "Do you have any iPhone 7  phones?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -162,11 +161,11 @@
             "start": 16,
             "value": "iPhone 7"
           }
-        ]
+        ],
+        "text": "Do you have any iPhone 7  phones?",
+        "intent": "request"
       },
       {
-        "text": "Do you have any Qbo Milk Master available?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -174,11 +173,11 @@
             "start": 16,
             "value": "Qbo Milk Master"
           }
-        ]
+        ],
+        "text": "Do you have any Qbo Milk Master available?",
+        "intent": "request"
       },
       {
-        "text": "Do you have any smart watches available?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -186,11 +185,11 @@
             "start": 16,
             "value": "smart watches"
           }
-        ]
+        ],
+        "text": "Do you have any smart watches available?",
+        "intent": "request"
       },
       {
-        "text": "Hello, I am in a vacation and want to rent a Drone BEBOP 2.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -198,11 +197,11 @@
             "start": 45,
             "value": "Drone BEBOP 2"
           }
-        ]
+        ],
+        "text": "Hello, I am in a vacation and want to rent a Drone BEBOP 2.",
+        "intent": "request"
       },
       {
-        "text": "I would like to borrow a Robotic Vacuum Cleaner POWERbot VR20J9259U/EG. Regards Mark Masnson",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -210,11 +209,11 @@
             "start": 25,
             "value": "Robotic Vacuum Cleaner POWERbot VR20J9259U/EG"
           }
-        ]
+        ],
+        "text": "I would like to borrow a Robotic Vacuum Cleaner POWERbot VR20J9259U/EG. Regards Mark Masnson",
+        "intent": "request"
       },
       {
-        "text": "I want to borrow a Samsung Galaxy S23.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -222,11 +221,11 @@
             "start": 19,
             "value": "Samsung Galaxy S23"
           }
-        ]
+        ],
+        "text": "I want to borrow a Samsung Galaxy S23.",
+        "intent": "request"
       },
       {
-        "text": "I want to take an Apple watch.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -234,11 +233,11 @@
             "start": 18,
             "value": "Apple watch"
           }
-        ]
+        ],
+        "text": "I want to take an Apple watch.",
+        "intent": "request"
       },
       {
-        "text": "Do you have a VR headset?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -246,23 +245,23 @@
             "start": 14,
             "value": "VR"
           }
-        ]
+        ],
+        "text": "Do you have a VR headset?",
+        "intent": "request"
       },
       {
-        "text": "I will rent a coffee machine.",
-        "intent": "request",
         "entities": [
           {
-            "entity": "device",
+            "entity": "brand",
             "end": 28,
             "start": 14,
             "value": "coffee machine"
           }
-        ]
+        ],
+        "text": "I will rent a coffee machine.",
+        "intent": "brand_request"
       },
       {
-        "text": "Hi, I want to take a Tchibo coffee machine. Do you have any?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -270,11 +269,11 @@
             "start": 21,
             "value": "Tchibo coffee machine"
           }
-        ]
+        ],
+        "text": "Hi, I want to take a Tchibo coffee machine. Do you have any?",
+        "intent": "request"
       },
       {
-        "text": "Do you have any apple phones?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -282,11 +281,11 @@
             "start": 16,
             "value": "apple phones"
           }
-        ]
+        ],
+        "text": "Do you have any apple phones?",
+        "intent": "request"
       },
       {
-        "text": "Do you have a Apple computer?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -294,11 +293,11 @@
             "start": 14,
             "value": "Apple computer"
           }
-        ]
+        ],
+        "text": "Do you have a Apple computer?",
+        "intent": "request"
       },
       {
-        "text": "Hey, I want to rent a Robotic Vacuum Cleaner POWERbot VR20J9020UR/EG.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -306,11 +305,11 @@
             "start": 45,
             "value": "POWERbot VR20J9020UR/EG"
           }
-        ]
+        ],
+        "text": "Hey, I want to rent a Robotic Vacuum Cleaner POWERbot VR20J9020UR/EG.",
+        "intent": "request"
       },
       {
-        "text": "Do you have any Virtual Reality headsets?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -318,11 +317,11 @@
             "start": 16,
             "value": "Virtual Reality headsets"
           }
-        ]
+        ],
+        "text": "Do you have any Virtual Reality headsets?",
+        "intent": "request"
       },
       {
-        "text": "Hey, we want to borrow a Alexa Dot for a month. How much will it cost?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -336,11 +335,11 @@
             "start": 39,
             "value": "a month"
           }
-        ]
+        ],
+        "text": "Hey, we want to borrow a Alexa Dot for a month. How much will it cost?",
+        "intent": "request"
       },
       {
-        "text": "I want to rent an Apple Watch. Do you have any?",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -348,16 +347,16 @@
             "start": 18,
             "value": "Apple Watch"
           }
-        ]
+        ],
+        "text": "I want to rent an Apple Watch. Do you have any?",
+        "intent": "request"
       },
       {
+        "entities": [],
         "text": "Hello",
-        "intent": "greet",
-        "entities": []
+        "intent": "greet"
       },
       {
-        "text": "I want the Lenovo YOGA.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -365,11 +364,11 @@
             "start": 11,
             "value": "Lenovo YOGA"
           }
-        ]
+        ],
+        "text": "I want the Lenovo YOGA.",
+        "intent": "request"
       },
       {
-        "text": "I will have Polar Watch V800.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -377,11 +376,11 @@
             "start": 12,
             "value": "Polar Watch V800"
           }
-        ]
+        ],
+        "text": "I will have Polar Watch V800.",
+        "intent": "request"
       },
       {
-        "text": "I will take MacBook 12\" M-5Y31, 8GB RAM, 516GB. Thanks.",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -389,26 +388,26 @@
             "start": 12,
             "value": "MacBook 12\" M-5Y31, 8GB RAM, 516GB"
           }
-        ]
+        ],
+        "text": "I will take MacBook 12\" M-5Y31, 8GB RAM, 516GB. Thanks.",
+        "intent": "request"
       },
       {
+        "entities": [],
         "text": "Hey",
-        "intent": "greet",
-        "entities": []
+        "intent": "greet"
       },
       {
+        "entities": [],
         "text": "Hallo",
-        "intent": "greet",
-        "entities": []
+        "intent": "greet"
       },
       {
+        "entities": [],
         "text": "Hi",
-        "intent": "greet",
-        "entities": []
+        "intent": "greet"
       },
       {
-        "text": "I want to rent a iphone 7",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -416,11 +415,11 @@
             "start": 17,
             "value": "iphone 7"
           }
-        ]
+        ],
+        "text": "I want to rent a iphone 7",
+        "intent": "request"
       },
       {
-        "text": "I want to borrow a HTC Vive",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -428,31 +427,31 @@
             "start": 19,
             "value": "HTC Vive"
           }
-        ]
+        ],
+        "text": "I want to borrow a HTC Vive",
+        "intent": "request"
       },
       {
+        "entities": [],
         "text": "Bye",
-        "intent": "goodbye",
-        "entities": []
+        "intent": "goodbye"
       },
       {
+        "entities": [],
         "text": "Goodbye",
-        "intent": "goodbye",
-        "entities": []
+        "intent": "goodbye"
       },
       {
+        "entities": [],
         "text": "Thank you, goodbye",
-        "intent": "goodbye",
-        "entities": []
+        "intent": "goodbye"
       },
       {
+        "entities": [],
         "text": "Regards, John",
-        "intent": "goodbye",
-        "entities": []
+        "intent": "goodbye"
       },
       {
-        "text": "I want to rent Watch 38mm",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -460,11 +459,11 @@
             "start": 15,
             "value": "Watch 38mm"
           }
-        ]
+        ],
+        "text": "I want to rent Watch 38mm",
+        "intent": "request"
       },
       {
-        "text": "I want iphone",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -472,11 +471,11 @@
             "start": 7,
             "value": "iphone"
           }
-        ]
+        ],
+        "text": "I want iphone",
+        "intent": "request"
       },
       {
-        "text": "I will have S8",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -484,11 +483,11 @@
             "start": 12,
             "value": "S8"
           }
-        ]
+        ],
+        "text": "I will have S8",
+        "intent": "request"
       },
       {
-        "text": "I want a iphone",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -496,11 +495,11 @@
             "start": 9,
             "value": "iphone"
           }
-        ]
+        ],
+        "text": "I want a iphone",
+        "intent": "request"
       },
       {
-        "text": "I would like to rent Vive",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -508,11 +507,11 @@
             "start": 21,
             "value": "Vive"
           }
-        ]
+        ],
+        "text": "I would like to rent Vive",
+        "intent": "request"
       },
       {
-        "text": "Hey, I want to rent Drone BEBOP 2",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -520,11 +519,11 @@
             "start": 20,
             "value": "Drone BEBOP 2"
           }
-        ]
+        ],
+        "text": "Hey, I want to rent Drone BEBOP 2",
+        "intent": "request"
       },
       {
-        "text": "I want to rent a Apple Iphone 7",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -532,11 +531,11 @@
             "start": 17,
             "value": "Apple Iphone 7"
           }
-        ]
+        ],
+        "text": "I want to rent a Apple Iphone 7",
+        "intent": "request"
       },
       {
-        "text": "I want a Watch V800",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -544,11 +543,11 @@
             "start": 9,
             "value": "Watch V800"
           }
-        ]
+        ],
+        "text": "I want a Watch V800",
+        "intent": "request"
       },
       {
-        "text": "I want an iphone for 5 months",
-        "intent": "request",
         "entities": [
           {
             "entity": "time",
@@ -562,11 +561,11 @@
             "start": 10,
             "value": "iphone"
           }
-        ]
+        ],
+        "text": "I want an iphone for 5 months",
+        "intent": "request"
       },
       {
-        "text": "I want iphone for 2 months",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -580,11 +579,11 @@
             "start": 18,
             "value": "2 months"
           }
-        ]
+        ],
+        "text": "I want iphone for 2 months",
+        "intent": "request"
       },
       {
-        "text": "I want macbook for four months.",
-        "intent": "request",
         "entities": [
           {
             "entity": "time",
@@ -598,11 +597,11 @@
             "start": 7,
             "value": "macbook"
           }
-        ]
+        ],
+        "text": "I want macbook for four months.",
+        "intent": "request"
       },
       {
-        "text": "I want to rent a vacuum cleaner for a month",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -616,11 +615,11 @@
             "start": 36,
             "value": "a month"
           }
-        ]
+        ],
+        "text": "I want to rent a vacuum cleaner for a month",
+        "intent": "request"
       },
       {
-        "text": "I want to rent a Iphone 7 for a month",
-        "intent": "request",
         "entities": [
           {
             "entity": "time",
@@ -634,11 +633,11 @@
             "start": 17,
             "value": "Iphone 7"
           }
-        ]
+        ],
+        "text": "I want to rent a Iphone 7 for a month",
+        "intent": "request"
       },
       {
-        "text": "I want to rent a Vive",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -646,11 +645,11 @@
             "start": 17,
             "value": "Vive"
           }
-        ]
+        ],
+        "text": "I want to rent a Vive",
+        "intent": "request"
       },
       {
-        "text": "I want to rent Galaxy S8+ 64GB",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -658,11 +657,11 @@
             "start": 15,
             "value": "Galaxy S8+ 64GB"
           }
-        ]
+        ],
+        "text": "I want to rent Galaxy S8+ 64GB",
+        "intent": "request"
       },
       {
-        "text": "I want S8+",
-        "intent": "request",
         "entities": [
           {
             "entity": "device",
@@ -670,11 +669,11 @@
             "start": 7,
             "value": "S8+"
           }
-        ]
+        ],
+        "text": "I want S8+",
+        "intent": "request"
       },
       {
-        "text": "I will take Galaxy S8 64GB for 5 months.",
-        "intent": "request",
         "entities": [
           {
             "entity": "time",
@@ -688,11 +687,11 @@
             "start": 12,
             "value": "Galaxy S8 64GB"
           }
-        ]
+        ],
+        "text": "I will take Galaxy S8 64GB for 5 months.",
+        "intent": "request"
       },
       {
-        "text": "I will ahve S8 64GB for a month.",
-        "intent": "request",
         "entities": [
           {
             "entity": "time",
@@ -706,9 +705,70 @@
             "start": 12,
             "value": "S8 64GB"
           }
-        ]
+        ],
+        "text": "I will ahve S8 64GB for a month.",
+        "intent": "request"
+      },
+      {
+        "entities": [
+          {
+            "entity": "brand",
+            "end": 19,
+            "start": 7,
+            "value": "apple laptop"
+          }
+        ],
+        "text": "I want apple laptop",
+        "intent": "request"
+      },
+      {
+        "entities": [
+          {
+            "entity": "brand",
+            "end": 20,
+            "start": 7,
+            "value": "Samsung phone"
+          }
+        ],
+        "text": "I want Samsung phone",
+        "intent": "brand_request"
+      },
+      {
+        "entities": [
+          {
+            "entity": "brand",
+            "end": 34,
+            "start": 23,
+            "value": "Apple phone"
+          }
+        ],
+        "text": "I would like to rent a Apple phone",
+        "intent": "brand_request"
+      },
+      {
+        "entities": [
+          {
+            "entity": "brand",
+            "end": 32,
+            "start": 16,
+            "value": "lenovo computers"
+          }
+        ],
+        "text": "Do you have any lenovo computers?",
+        "intent": "brand_request"
+      },
+      {
+        "entities": [
+          {
+            "entity": "brand",
+            "end": 24,
+            "start": 12,
+            "value": "apple phones"
+          }
+        ],
+        "text": "Do you have apple phones?",
+        "intent": "brand_request"
       }
-    ],
-    "regex_features": []
+    ]
   }
 }

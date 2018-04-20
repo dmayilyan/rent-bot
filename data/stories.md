@@ -179,3 +179,42 @@
     - slot{"device": "S8+"}
 * goodbye
     - export
+
+## Generated Story -6311760523006249346
+* brand_request{"brand": "samsung phone"}
+    - slot{"brand": "samsung phone"}
+    - action_brand_request
+    - slot{"brand": ["samsung", "phone"]}
+* request{"device": "galaxy s8+"}
+    - slot{"device": "galaxy s8+"}
+    - action_request
+    - slot{"device": "galaxy s8+"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story -6311760523006249346
+* brand_request{"brand": "lenovo computer"}
+    - slot{"brand": "lenovo computer"}
+    - action_brand_request
+    - slot{"brand": ["lenovo", "computer"]}
+* request{"device": "Convertible Laptop YOGA 300-11IBR 80M1004KGE"}
+    - slot{"device": "Convertible Laptop YOGA 300-11IBR 80M1004KGE"}
+    - action_request
+    - slot{"device": "Convertible Laptop YOGA 300-11IBR 80M1004KGE"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story 7601345653165049107
+* request{"brand": "apple laptop"}
+    - slot{"brand": "apple laptop"}
+    - action_brand_request
+    - slot{"brand": ["apple", "comput"]}
+* request{"device": "macbook air 13\""}
+    - slot{"device": "macbook air 13\""}
+    - action_request
+    - slot{"device": "macbook air 13\""}
+* goodbye
+    - utter_goodbye
+    - export

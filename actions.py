@@ -77,7 +77,7 @@ class ActionBrandRequest(Action):
         for item in devices.keys():
             is_brand = False
             is_category = False
-            
+
             is_brand = br in item[2].lower()
             is_category = cat in item[3].lower()
             # make_response()
@@ -87,7 +87,7 @@ class ActionBrandRequest(Action):
             # elif is_brand and not is_category:
             #     matches.append(item[1])
 
-        print(matches)
+        # print(matches)
         return matches
 
     def _get_brand(self, brand_req):
@@ -189,16 +189,16 @@ if __name__ == '__main__':
     t1 = 'Apple laptops'
     t2 = 'Samsung phone'
     t3 = 'Samsung phones'
-    t4 = 'lenovo computer'
+    t4 = 'Lenovo computer'
     test = ActionBrandRequest()
-    test.run(text)
-    test.run(t1)
-    test.run(t2)
-    test.run(t3)
+    # test.run(text)
+    # test.run(t1)
+    # test.run(t2)
+    # test.run(t3)
     test.run(t4)
     # test.check_in_dict(text)
     # test.check_in_dict(t1)
     # test.check_in_dict(t2)
 
-    brand = test._get_brand(t2)
+    # brand = test._get_brand(t2)
     # test.check_in_dict(t4)

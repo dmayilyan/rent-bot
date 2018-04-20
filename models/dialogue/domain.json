@@ -1,10 +1,13 @@
 {
   "features": [
+    "intent_brand_request",
     "intent_request",
     "intent_greet",
     "intent_goodbye",
     "entity_device",
     "entity_time",
+    "entity_brand",
+    "slot_brand_0",
     "slot_device_0",
     "slot_time_0",
     "prev_action_listen",
@@ -12,6 +15,7 @@
     "prev_utter_greet",
     "prev_utter_goodbye",
     "prev_utter_not_found",
-    "prev_action_request"
+    "prev_action_request",
+    "prev_action_brand_request"
   ]
 }

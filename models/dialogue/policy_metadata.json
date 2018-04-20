@@ -1,16 +1,11 @@
 {
   "action_fingerprints": {
-    "action_listen": {
-      "slots": [
-        "device",
-        "time"
-      ]
-    },
     "utter_goodbye": {
       "slots": []
     },
-    "null": {
+    "action_listen": {
       "slots": [
+        "brand",
         "device",
         "time"
       ]
@@ -18,6 +13,17 @@
     "action_request": {
       "slots": [
         "device"
+      ]
+    },
+    "null": {
+      "slots": [
+        "device",
+        "time"
+      ]
+    },
+    "action_brand_request": {
+      "slots": [
+        "brand"
       ]
     }
   },
