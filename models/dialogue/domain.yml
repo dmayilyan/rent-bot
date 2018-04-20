@@ -22,6 +22,9 @@ slots:
   device:
     initial_value: null
     type: rasa_core.slots.TextSlot
+  time:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
 templates:
   utter_goodbye:
   - text: Thank you for using our service.

@@ -126,3 +126,37 @@
 * goodbye
     - utter_goodbye
     - export
+
+## Generated Story 1192564040892005863 of time and device
+* request{"device": "iphone 7 128gb", "time": "4 months"}
+    - slot{"device": "iphone 7 128gb"}
+    - slot{"time": "4 months"}
+    - action_request
+    - slot{"device": "iphone 7 128gb"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story 7125689077937909100
+* request{"device": "iphone 7", "time": "a month"}
+    - slot{"device": "iphone 7"}
+    - slot{"time": "a month"}
+    - action_request
+    - slot{"device": "iphone 7"}
+* request{"device": "iphone 7 32gb"}
+    - slot{"device": "iphone 7 32gb"}
+    - action_request
+    - slot{"device": "iphone 7 32gb"}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story 5638382086597149607
+* request{"device": "galaxy s8 64gb"}
+    - slot{"device": "galaxy s8 64gb"}
+    - action_request
+    - slot{"device": "galaxy s8 64gb"}
+* goodbye
+    - utter_goodbye
+    - export
+

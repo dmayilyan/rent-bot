@@ -6,6 +6,7 @@
     "entity_device",
     "entity_time",
     "slot_device_0",
+    "slot_time_0",
     "prev_action_listen",
     "prev_action_restart",
     "prev_utter_greet",
