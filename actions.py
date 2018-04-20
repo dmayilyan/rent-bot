@@ -51,6 +51,48 @@ time_period = {('1', 'one', 'a'): 1,
 #         return 'action_unclear'
 
 
+class ActionBrandRequest(Action):
+    def name(self):
+        return 'action_brandrequest'
+
+    def check_in_dict(self, brand_req):
+        '''
+        Checking for brand devices
+        '''
+        matches = []
+        for item in devices.keys():
+            if brand_req.lower() in item[2].lower():
+                matches.append(item[1])
+
+        return matches
+
+    def get_brand(self, brand_req):
+        '''
+        Getting the brand
+        '''
+        pattern = r'(\w+) +(laptops*|phones*|comput.*)'
+        regex = re.compile(pattern)
+        result = regex.findall(brand_req)
+
+        print(result)
+        return(result)
+        
+    def run(self, text):
+    # def run(self, dispatcher, tracker, domain):
+        # try:
+        # brand_req = tracker.get_slot('device')
+        # brand = self.get_brand(brand_req)
+        brand = self.get_brand(text)
+        matches = self.check_in_dict(brand)
+        # except AttributeError:
+        #     print('Brand not found.')
+
+        response = '\033[0;34mFor the {brand} we have these devices:\n{bl}\033[0m'.format(brand=brand.title(), bl=matches)
+        print(response)
+
+        dispatcher.utter_message(response)
+        return [SlotSet('device', brand if brand is not None else [])]
+
 class ActionRequest(Action):
     def name(self):
         return 'action_request'
@@ -115,6 +157,21 @@ class ActionRequest(Action):
 
 
 if __name__ == '__main__':
-    text = 'two months'
-    test = ActionRequest()
-    test.run(text)
+    # text = 'two months'
+    # test = ActionRequest()
+    # test.run(text)
+    text = 'Apple laptop'
+    t1 = 'Apple laptops'
+    t2 = 'Samsung phone'
+    t3 = 'Samsung phones'
+    t4 = 'lenovo computer'
+    test = ActionBrandRequest()
+    # test.run(text)
+    # test.run(t1)
+    # test.run(t2)
+    # test.run(t3)
+    test.get_brand(text)
+    test.get_brand(t1)
+    test.get_brand(t2)
+    test.get_brand(t3)
+    test.get_brand(t4)
