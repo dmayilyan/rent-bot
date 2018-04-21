@@ -94,34 +94,38 @@ class ActionBrandRequest(Action):
         Getting the brand
         '''
         print(brand_req)
-        pattern = r'(\w+) +(laptop|phone|comput|tablet|watch|quadrocopt)+[ers]*'
+        pattern = r'(\w+) +(laptop|phone|comput|' \
+                   'tablet|watch|quadrocopt)+[ers]*'
         regex = re.compile(pattern, flags=re.IGNORECASE)
         result = regex.findall(brand_req)
 
         return result[0]
 
-    # def run(self, text):
-    def run(self, dispatcher, tracker, domain):
+    def run(self, text):
+    # def run(self, dispatcher, tracker, domain):
         try:
-            brand_req = tracker.get_slot('brand')
-            brand = self._get_brand(brand_req)
-            # brand = self._get_brand(text)
+            # brand_req = tracker.get_slot('brand')
+            # brand = self._get_brand(brand_req)
+            brand = self._get_brand(text)
             brand = self._replace_syns(brand)
             matches = self._check_in_dict(brand)
         except AttributeError:
             print('Brand not found.')
 
-        response = '\033[0;31mFor the {brand} we have these devices:\n{bl}\033[0m'.format(brand=brand[0].title(), bl=matches)
-        # print(response)
+        response = '\033[0;31mFor the {brand} we have ' \
+                   'these devices:\n{bl}\033[0m'.format(brand=brand[0].title(),
+                                                        bl=matches)
+        print(response)
 
-        dispatcher.utter_message(response)
-        return [SlotSet('brand', brand if brand is not None else [])]
+        # dispatcher.utter_message(response)
+        # return [SlotSet('brand', brand if brand is not None else [])]
+
 
 class ActionRequest(Action):
     def name(self):
         return 'action_request'
 
-    def check_in_dict(self, req):
+    def _check_in_dict(self, req):
         '''
         Chcking for the device in the list
         '''
@@ -133,7 +137,7 @@ class ActionRequest(Action):
         # print(matches)
         return matches
 
-    def get_time_period(self, text):
+    def _get_time_period(self, text):
         '''
         Finding requested time period
         '''
@@ -152,28 +156,33 @@ class ActionRequest(Action):
         matches = []
         try:
             request = tracker.get_slot('device')
-            matches = self.check_in_dict(request)
+            matches = self._check_in_dict(request)
         except AttributeError:
             print('Device not found.')
         # Checking for how long is the rent request
         try:
             time_req = tracker.get_slot('time')
-            time_period = self.get_time_period(time_req)
+            time_period = self._get_time_period(time_req)
         except TypeError:
             time_period = 1
             print('Time period not mentioned.')
-        # matches = self.check_in_dict(text)
-        # time_period = self.get_time_period(text)
+        # matches = self._check_in_dict(text)
+        # time_period = self._get_time_period(text)
 
         if len(matches) == 0:
-            response = '\033[0;31mWe do not have what you requested. Do you want any other device?\033[0m'
+            response = '\033[0;31mWe do not have what you requested. ' \
+                       'Do you want any other device?\033[0m'
             # print(response)
         elif len(matches) == 1:
             calc_price = matches[0][1] * time_period
-            response  = '\033[0;31mWe do have {req} for {price} overall.\033[0m'.format(req=matches[0][0].title(), price=calc_price)
+            response = '\033[0;31mWe do have {req} for {price} overall.' \
+                       '\033[0m'.format(req=matches[0][0].title(),
+                                        price=calc_price)
             # print(response)
         elif len(matches) > 1:
-            response = '\033[0;31mWe have several devices matching your request.\nWhich one do you want?\n{}\033[0m'.format(matches)
+            response = '\033[0;31mWe have several devices ' \
+                       'matching your request.\nWhich one ' \
+                       'do you want?\n{}\033[0m'.format(matches)
             # print(response)
 
         dispatcher.utter_message(response)
@@ -197,9 +206,9 @@ if __name__ == '__main__':
     test.run(t3)
     test.run(t4)
     test.run(t5)
-    # test.check_in_dict(text)
-    # test.check_in_dict(t1)
-    # test.check_in_dict(t2)
+    # test._check_in_dict(text)
+    # test._check_in_dict(t1)
+    # test._check_in_dict(t2)
 
     # brand = test._get_brand(t2)
-    # test.check_in_dict(t4)
+    # test._check_in_dict(t4)
