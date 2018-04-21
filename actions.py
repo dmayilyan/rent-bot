@@ -46,10 +46,6 @@ time_period = {('1', 'one', 'a'): 1,
                ('11', 'eleven'): 11,
                ('12', 'twelve'): 12}
 
-# class ActionUnclear(Action):
-#     def name(self):
-#         return 'action_unclear'
-
 
 class ActionBrandRequest(Action):
     def name(self):
@@ -58,9 +54,13 @@ class ActionBrandRequest(Action):
     def _replace_syns(self, matches):
         syns = {'laptop': 'comput',
                 'phon': 'phone',
-                'fon': 'phone'}
+                'fon': 'phone',
+                'cleaner': 'home',
+                'watch': 'wearable',
+                'quadrocopt': 'drone'}
 
         for item in matches:
+            item = item.lower()
             if item in syns.keys():
                 matches = (matches[0], item.replace(item, syns[item]))
 
@@ -73,7 +73,6 @@ class ActionBrandRequest(Action):
         matches = []
         br = brand_req[0].lower()
         cat = brand_req[1].lower()
-        print(brand_req)
         for item in devices.keys():
             is_brand = False
             is_category = False
@@ -84,7 +83,7 @@ class ActionBrandRequest(Action):
             # print(is_brand, is_category)
             if is_brand and is_category:
                 matches.append(item[1])
-            # elif is_brand and not is_category:
+            # if is_brand and not is_category:
             #     matches.append(item[1])
 
         # print(matches)
@@ -94,8 +93,9 @@ class ActionBrandRequest(Action):
         '''
         Getting the brand
         '''
-        pattern = r'(\w+) +(laptop|phone|comput|tablet)+[ers]*'
-        regex = re.compile(pattern)
+        print(brand_req)
+        pattern = r'(\w+) +(laptop|phone|comput|tablet|watch|quadrocopt)+[ers]*'
+        regex = re.compile(pattern, flags=re.IGNORECASE)
         result = regex.findall(brand_req)
 
         return result[0]
@@ -108,11 +108,10 @@ class ActionBrandRequest(Action):
             # brand = self._get_brand(text)
             brand = self._replace_syns(brand)
             matches = self._check_in_dict(brand)
-            print(matches)
         except AttributeError:
             print('Brand not found.')
 
-        response = '\033[0;34mFor the {brand} we have these devices:\n{bl}\033[0m'.format(brand=brand[0].title(), bl=matches)
+        response = '\033[0;31mFor the {brand} we have these devices:\n{bl}\033[0m'.format(brand=brand[0].title(), bl=matches)
         # print(response)
 
         dispatcher.utter_message(response)
@@ -167,14 +166,14 @@ class ActionRequest(Action):
         # time_period = self.get_time_period(text)
 
         if len(matches) == 0:
-            response = '\033[0;34mWe do not have what you requested. Do you want any other device?\033[0m'
+            response = '\033[0;31mWe do not have what you requested. Do you want any other device?\033[0m'
             # print(response)
         elif len(matches) == 1:
             calc_price = matches[0][1] * time_period
-            response  = '\033[0;34mWe do have {req} for {price} overall.\033[0m'.format(req=matches[0][0].title(), price=calc_price)
+            response  = '\033[0;31mWe do have {req} for {price} overall.\033[0m'.format(req=matches[0][0].title(), price=calc_price)
             # print(response)
         elif len(matches) > 1:
-            response = '\033[0;34mWe have several devices matching your request.\nWhich one do you want?\n{}\033[0m'.format(matches)
+            response = '\033[0;31mWe have several devices matching your request.\nWhich one do you want?\n{}\033[0m'.format(matches)
             # print(response)
 
         dispatcher.utter_message(response)
@@ -190,12 +189,14 @@ if __name__ == '__main__':
     t2 = 'Samsung phone'
     t3 = 'Samsung phones'
     t4 = 'Lenovo computer'
+    t5 = 'Parrot Quadrocopter'
     test = ActionBrandRequest()
-    # test.run(text)
-    # test.run(t1)
-    # test.run(t2)
-    # test.run(t3)
+    test.run(text)
+    test.run(t1)
+    test.run(t2)
+    test.run(t3)
     test.run(t4)
+    test.run(t5)
     # test.check_in_dict(text)
     # test.check_in_dict(t1)
     # test.check_in_dict(t2)
