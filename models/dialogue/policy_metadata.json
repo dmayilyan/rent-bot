@@ -1,37 +1,37 @@
 {
+  "max_history": 2,
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "rasa_core": "0.8.5",
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ],
   "action_fingerprints": {
+    "action_brand_request": {
+      "slots": [
+        "brand"
+      ]
+    },
     "utter_goodbye": {
       "slots": []
     },
     "action_listen": {
       "slots": [
-        "brand",
+        "time",
         "device",
-        "time"
+        "brand"
+      ]
+    },
+    "null": {
+      "slots": [
+        "time",
+        "device"
       ]
     },
     "action_request": {
       "slots": [
         "device"
       ]
-    },
-    "null": {
-      "slots": [
-        "device",
-        "time"
-      ]
-    },
-    "action_brand_request": {
-      "slots": [
-        "brand"
-      ]
     }
-  },
-  "policy_names": [
-    "rasa_core.policies.memoization.MemoizationPolicy",
-    "rasa_core.policies.keras_policy.KerasPolicy"
-  ],
-  "max_history": 2,
-  "rasa_core": "0.8.5",
-  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble"
+  }
 }
