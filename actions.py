@@ -1,6 +1,4 @@
-# from __future__ import absolute_import
-# from __future__ import division
-# from __future__ import unicode_literals
+# -*- coding: utf-8 -*-
 
 from rasa_core.actions.action import Action
 from rasa_core.events import SlotSet
@@ -101,12 +99,12 @@ class ActionBrandRequest(Action):
 
         return result[0]
 
-    def run(self, text):
-    # def run(self, dispatcher, tracker, domain):
+    # def run(self, text):
+    def run(self, dispatcher, tracker, domain):
         try:
-            # brand_req = tracker.get_slot('brand')
-            # brand = self._get_brand(brand_req)
-            brand = self._get_brand(text)
+            brand_req = tracker.get_slot('brand')
+            brand = self._get_brand(brand_req)
+            # brand = self._get_brand(text)
             brand = self._replace_syns(brand)
             matches = self._check_in_dict(brand)
         except AttributeError:
@@ -115,10 +113,10 @@ class ActionBrandRequest(Action):
         response = '\033[0;31mFor the {brand} we have ' \
                    'these devices:\n{bl}\033[0m'.format(brand=brand[0].title(),
                                                         bl=matches)
-        print(response)
+        # print(response)
 
-        # dispatcher.utter_message(response)
-        # return [SlotSet('brand', brand if brand is not None else [])]
+        dispatcher.utter_message(response)
+        return [SlotSet('brand', brand if brand is not None else [])]
 
 
 class ActionRequest(Action):
@@ -153,6 +151,7 @@ class ActionRequest(Action):
 
     # def run(self, text):
     def run(self, dispatcher, tracker, domain):
+        calc_price = 1
         matches = []
         try:
             request = tracker.get_slot('device')
@@ -186,7 +185,8 @@ class ActionRequest(Action):
             # print(response)
 
         dispatcher.utter_message(response)
-        return [SlotSet('device', request if request is not None else [])]
+        return [SlotSet('device', request if request is not None else ''),
+                SlotSet('price', calc_price if calc_price is not None else -1)]
 
 
 if __name__ == '__main__':
