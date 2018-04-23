@@ -3,8 +3,13 @@ slots:
     type: text
   time:
     type: text
+  brand:
+    type: text
+  price:
+    type: float
 
 intents:
+ - brand_request
  - request
  - greet
  - goodbye
@@ -13,13 +18,14 @@ intents:
 entities:
  - device
  - time
+ - brand
 
 templates:
   utter_greet:
     - 'Hello. How can we help?'
     - 'Can I be helpful?'
   utter_goodbye:
-    - 'Thank you for using our service.'
+    - 'Thank you for using our service.\n Device: {device}\n Price: {price}'
   utter_not_found:
     - 'The device you requested is not found. Choose something else.'
 
@@ -29,3 +35,4 @@ actions:
  - utter_goodbye
  - utter_not_found
  - actions.ActionRequest
+ - actions.ActionBrandRequest

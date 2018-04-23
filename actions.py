@@ -93,7 +93,7 @@ class ActionBrandRequest(Action):
         '''
         print(brand_req)
         pattern = r'(\w+) +(laptop|phone|comput|' \
-                   'tablet|watch|quadrocopt)+[ers]*$'
+                   'tablet|watch|quadrocopt)+[ers]*'
         regex = re.compile(pattern, flags=re.IGNORECASE)
         result = regex.findall(brand_req)
 
@@ -118,15 +118,14 @@ class ActionBrandRequest(Action):
             print('Brand not found.')
 
         if len(matches) != 1:
-            resp = 'For the {br} we have these devices:\n{bl}'
+            resp = self._set_color('For brand {br} we have' +
+                                   ' these devices:\n{bl}')
             response = resp.format(br=brand[0].title(),
                                    bl=matches)
         else:
-            resp = 'We have one device available for brand {br}. Selecting it!'
+            resp = self._set_color('We have one device available for ' +
+                                   'brand {br}. Selecting it!')
             response = resp.format(br=brand[0].title())
-            dispatcher.utter_message(response)
-            return [SlotSet('brand', brand[0] if brand is not None else []),
-                    SlotSet('device', matches[0] if matches is not None else '')]
         # print(response)
 
         dispatcher.utter_message(response)
@@ -161,51 +160,57 @@ class ActionRequest(Action):
                 if result[0] in k_tup:
                     return time_period[k_tup]
                 else:
-                    print('\033[0;31mMax rent period is set to 12.\033[0m')
+                    print(self._set_color('Max rent period is set to 12.'))
                     return 12
         else:
             return 1
 
-    def run(self, text):
-    # def run(self, dispatcher, tracker, domain):
+    def _set_color(self, t):
+        '''
+        Making the output colored
+        '''
+        return '\033[0;31m' + t + '\033[0m'
+
+
+    # def run(self, text):
+    def run(self, dispatcher, tracker, domain):
         calc_price = 1
         matches = []
         try:
             request = tracker.get_slot('device')
             matches = self._check_in_dict(request)
         except AttributeError:
-            print('Device not found.')
+            print(self._set_color('Device not found.'))
         # Checking for how long is the rent request
         try:
             time_req = tracker.get_slot('time')
-            if time_req is not 1:
-                time_period = self._get_time_period(time_req)
+            time_period = self._get_time_period(time_req)
         except TypeError:
             time_period = 1
-            print('Time period not mentioned.')
+            print(self._set_color('Time period not mentioned. Assume 1 month'))
         # matches = self._check_in_dict(text)
         # time_period = self._get_time_period(text)
 
         if len(matches) == 0:
-            response = '\033[0;31mWe do not have what you requested. ' \
-                       'Do you want any other device?\033[0m'
+            response = self._set_color('We do not have what you requested. ' +
+                                       'Do you want any other device?')
             # print(response)
         elif len(matches) == 1:
             calc_price = matches[0][1] * time_period
-            response = '\033[0;31mWe do have {req} for {price} overall.' \
-                       '\033[0m'.format(req=matches[0][0].title(),
-                                        price=calc_price)
+            resp = self._set_color('We do have {req} for {price} overall.')
+            response = resp.format(req=matches[0][0].title(),
+                                   price=calc_price)
             # print(response)
         elif len(matches) > 1:
-            response = '\033[0;31mWe have several devices ' \
-                       'matching your request.\nWhich one ' \
-                       'do you want?\n{}\033[0m'.format(matches)
+            resp = self._set_color('We have several devices matching your ' +
+                                   'request.\nWhich one do you want?')
+            response = resp.format(matches)
             # print(response)
 
-        # dispatcher.utter_message(response)
-        # return [SlotSet('device', request if request is not None else ''),
-        #         SlotSet('time', time_period if time_period is not None else 1),
-        #         SlotSet('price', calc_price if calc_price is not None else -1)]
+        dispatcher.utter_message(response)
+        return [SlotSet('device', request if request is not None else ''),
+                SlotSet('time', time_period if time_period is not None else 1),
+                SlotSet('price', calc_price if calc_price is not None else -1)]
 
 
 if __name__ == '__main__':

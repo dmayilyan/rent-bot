@@ -1,19 +1,11 @@
 {
   "max_history": 2,
-  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
-  "rasa_core": "0.8.5",
-  "policy_names": [
-    "rasa_core.policies.memoization.MemoizationPolicy",
-    "rasa_core.policies.keras_policy.KerasPolicy"
-  ],
   "action_fingerprints": {
-    "action_brand_request": {
+    "action_request": {
       "slots": [
-        "brand"
+        "price",
+        "device"
       ]
-    },
-    "utter_goodbye": {
-      "slots": []
     },
     "action_listen": {
       "slots": [
@@ -28,10 +20,19 @@
         "device"
       ]
     },
-    "action_request": {
+    "utter_goodbye": {
+      "slots": []
+    },
+    "action_brand_request": {
       "slots": [
-        "device"
+        "brand"
       ]
     }
-  }
+  },
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ],
+  "rasa_core": "0.8.5",
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble"
 }

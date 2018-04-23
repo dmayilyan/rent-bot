@@ -180,41 +180,95 @@
 * goodbye
     - export
 
-## Generated Story -6311760523006249346
-* brand_request{"brand": "samsung phone"}
-    - slot{"brand": "samsung phone"}
-    - action_brand_request
-    - slot{"brand": ["samsung", "phone"]}
-* request{"device": "galaxy s8+"}
-    - slot{"device": "galaxy s8+"}
-    - action_request
-    - slot{"device": "galaxy s8+"}
-* goodbye
-    - utter_goodbye
-    - export
-
-## Generated Story -6311760523006249346
-* brand_request{"brand": "lenovo computer"}
-    - slot{"brand": "lenovo computer"}
-    - action_brand_request
-    - slot{"brand": ["lenovo", "computer"]}
-* request{"device": "Convertible Laptop YOGA 300-11IBR 80M1004KGE"}
-    - slot{"device": "Convertible Laptop YOGA 300-11IBR 80M1004KGE"}
-    - action_request
-    - slot{"device": "Convertible Laptop YOGA 300-11IBR 80M1004KGE"}
-* goodbye
-    - utter_goodbye
-    - export
-
-## Generated Story 7601345653165049107
+## Generated Story -9148720919509289663
 * request{"brand": "apple laptop"}
     - slot{"brand": "apple laptop"}
     - action_brand_request
     - slot{"brand": ["apple", "comput"]}
-* request{"device": "macbook air 13\""}
-    - slot{"device": "macbook air 13\""}
+* request{"device": "air 11\" i7"}
+    - slot{"device": "air 11\" i7"}
     - action_request
-    - slot{"device": "macbook air 13\""}
+    - slot{"device": "air 11\" i7"}
 * goodbye
     - utter_goodbye
+    - export
+
+## Generated Story 8088928291388930346
+* request{"brand": "lenovo laptop"}
+    - slot{"brand": "lenovo laptop"}
+    - action_brand_request
+    - slot{"brand": ["lenovo", "comput"]}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story 4314686574644314330
+* request{"brand": "apple laptop"}
+    - slot{"brand": "apple laptop"}
+    - action_brand_request
+    - slot{"brand": ["apple", "comput"]}
+* request{"time": "five months"}
+    - slot{"time": "five months"}
+    - action_request
+    - slot{"device": ""}
+    - slot{"price": 1}
+* request{"device": "macbook 12\" m-5y31, 8gb"}
+    - slot{"device": "macbook 12\" m-5y31, 8gb"}
+    - action_request
+    - slot{"device": "macbook 12\" m-5y31, 8gb"}
+    - slot{"price": 299.95}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story -1971208058125876913
+* request{"brand": "apple computer"}
+    - slot{"brand": "apple computer"}
+    - action_brand_request
+    - slot{"brand": ["apple", "comput"]}
+* request{"time": "seven months"}
+    - slot{"time": "seven months"}
+    - action_request
+    - slot{"device": ""}
+    - slot{"price": 1}
+* request{"device": "macbook pro 13\" i5-3210m"}
+    - slot{"device": "macbook pro 13\" i5-3210m"}
+    - action_request
+    - slot{"device": "macbook pro 13\" i5-3210m"}
+    - slot{"price": 524.93}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story -1941674745345144663
+* request{"brand": "apple laptop"}
+    - slot{"brand": "apple laptop"}
+    - action_brand_request
+    - slot{"brand": ["apple", "comput"]}
+* request{"device": "macbook pro 13\" i5-3210m, 4gb ram"}
+    - slot{"device": "macbook pro 13\" i5-3210m, 4gb ram"}
+    - action_request
+    - slot{"device": "macbook pro 13\" i5-3210m, 4gb ram"}
+    - slot{"price": 74.99}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story -6026342271666424298
+* request{"brand": "apple laptop"}
+    - slot{"brand": "apple laptop"}
+    - action_brand_request
+    - slot{"brand": "apple"}
+* request{"device": "macbook 12\" m-5y31, 8gb ram,"}
+    - slot{"device": "macbook 12\" m-5y31, 8gb ram,"}
+    - action_request
+    - slot{"device": "macbook 12\" m-5y31, 8gb ram,"}
+    - slot{"time": 1}
+    - slot{"price": 59.99}
+* request{"time": "3 months"}
+    - slot{"time": "3 months"}
+    - action_request
+    - slot{"device": "macbook 12\" m-5y31, 8gb ram,"}
+    - slot{"time": 3}
+    - slot{"price": 179.97}
     - export

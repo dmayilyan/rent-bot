@@ -13,3 +13,9 @@ Bot will detect device and period of renting, giving you the corresponding price
 Rasa_nlu throws an error for Python 3.6. One workaround is installing a slightly older version of rasa_nlu.
 
 Model was tested on Python 3.4.6.
+
+## Changelog
+
+- Now goodbye message contains price and device name
+- Time exceptions are handled correctly now
+- Minor changes

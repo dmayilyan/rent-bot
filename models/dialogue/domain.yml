@@ -29,12 +29,17 @@ slots:
   device:
     initial_value: null
     type: rasa_core.slots.TextSlot
+  price:
+    initial_value: null
+    max_value: 1.0
+    min_value: 0.0
+    type: rasa_core.slots.FloatSlot
   time:
     initial_value: null
     type: rasa_core.slots.TextSlot
 templates:
   utter_goodbye:
-  - text: Thank you for using our service.
+  - text: 'Thank you for using our service.\n Device: {device}\n Price: {price}'
   utter_greet:
   - text: Hello. How can we help?
   - text: Can I be helpful?
