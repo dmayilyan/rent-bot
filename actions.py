@@ -99,6 +99,13 @@ class ActionBrandRequest(Action):
 
         return result[0]
 
+    def _set_color(self, t):
+        '''
+        Making the output colored
+        '''
+        return '\033[0;31m' + t + '\033[0m'
+
+
     # def run(self, text):
     def run(self, dispatcher, tracker, domain):
         try:
@@ -110,13 +117,20 @@ class ActionBrandRequest(Action):
         except AttributeError:
             print('Brand not found.')
 
-        response = '\033[0;31mFor the {brand} we have ' \
-                   'these devices:\n{bl}\033[0m'.format(brand=brand[0].title(),
-                                                        bl=matches)
+        if len(matches) != 1:
+            resp = 'For the {br} we have these devices:\n{bl}'
+            response = resp.format(br=brand[0].title(),
+                                   bl=matches)
+        else:
+            resp = 'We have one device available for brand {br}. Selecting it!'
+            response = resp.format(br=brand[0].title())
+            dispatcher.utter_message(response)
+            return [SlotSet('brand', brand[0] if brand is not None else []),
+                    SlotSet('device', matches[0] if matches is not None else '')]
         # print(response)
 
         dispatcher.utter_message(response)
-        return [SlotSet('brand', brand if brand is not None else [])]
+        return [SlotSet('brand', brand[0] if brand is not None else [])]
 
 
 class ActionRequest(Action):
@@ -146,11 +160,14 @@ class ActionRequest(Action):
             for k_tup in time_period.keys():
                 if result[0] in k_tup:
                     return time_period[k_tup]
+                else:
+                    print('\033[0;31mMax rent period is set to 12.\033[0m')
+                    return 12
         else:
             return 1
 
-    # def run(self, text):
-    def run(self, dispatcher, tracker, domain):
+    def run(self, text):
+    # def run(self, dispatcher, tracker, domain):
         calc_price = 1
         matches = []
         try:
@@ -161,7 +178,8 @@ class ActionRequest(Action):
         # Checking for how long is the rent request
         try:
             time_req = tracker.get_slot('time')
-            time_period = self._get_time_period(time_req)
+            if time_req is not 1:
+                time_period = self._get_time_period(time_req)
         except TypeError:
             time_period = 1
             print('Time period not mentioned.')
@@ -184,29 +202,27 @@ class ActionRequest(Action):
                        'do you want?\n{}\033[0m'.format(matches)
             # print(response)
 
-        dispatcher.utter_message(response)
-        return [SlotSet('device', request if request is not None else ''),
-                SlotSet('price', calc_price if calc_price is not None else -1)]
+        # dispatcher.utter_message(response)
+        # return [SlotSet('device', request if request is not None else ''),
+        #         SlotSet('time', time_period if time_period is not None else 1),
+        #         SlotSet('price', calc_price if calc_price is not None else -1)]
 
 
 if __name__ == '__main__':
-    # text = 'two months'
-    # test = ActionRequest()
-    # test.run(text)
-    text = 'Apple laptop'
+    t0 = 'Apple laptop'
     t1 = 'Apple laptops'
-    t2 = 'Samsung phone'
+    t2 = 'Convertible Laptop YOGA'
     t3 = 'Samsung phones'
     t4 = 'Lenovo computer'
     t5 = 'Parrot Quadrocopter'
     test = ActionBrandRequest()
-    test.run(text)
-    test.run(t1)
+    # test.run(text)
+    # test.run(t1)
     test.run(t2)
-    test.run(t3)
-    test.run(t4)
-    test.run(t5)
-    # test._check_in_dict(text)
+    # test.run(t3)
+    # test.run(t4)
+    # test.run(t5)
+    # test._check_in_dict(t0)
     # test._check_in_dict(t1)
     # test._check_in_dict(t2)
 
