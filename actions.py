@@ -93,7 +93,7 @@ class ActionBrandRequest(Action):
         '''
         print(brand_req)
         pattern = r'(\w+) +(laptop|phone|comput|' \
-                   'tablet|watch|quadrocopt)+[ers]*'
+                   'tablet|watch|quadrocopt)+[ers]*$'
         regex = re.compile(pattern, flags=re.IGNORECASE)
         result = regex.findall(brand_req)
 
