@@ -4,6 +4,7 @@ from rasa_core.actions.action import Action
 from rasa_core.events import SlotSet
 
 import re
+import pprint
 
 devices = {(1, 'iPhone 7 128GB', 'Apple', 'Phones & Tablets'): 44.99,
            (2, 'iPhone 7 32GB', 'Apple', 'Phones & Tablets'): 39.99,
@@ -13,13 +14,20 @@ devices = {(1, 'iPhone 7 128GB', 'Apple', 'Phones & Tablets'): 44.99,
            (6, 'Drone BEBOP', 'Parrot', 'Drones'): 49.99,
            (7, 'Drone BEBOP 2', 'Parrot', 'Drones'): 59.99,
            (8, 'Vive', 'HTC', 'Gaming & VR'): 59.99,
-           (9, 'Virtual Reality Glasses Rift VR', 'Oculus', 'Gaming & VR'): 59.99,
-           (10, 'MacBook 12\" M-5Y31, 8GB RAM, 516GB', 'Apple', 'Computing'): 59.99,
-           (11, 'MacBook Air 11\" i7 2.2, 8GB RAM, 512GB', 'Apple', 'Computing'): 64.99,
-           (12, 'MacBook Air 13\" i5-5250U, 4GB RAM, 128GB', 'Apple', 'Computing'): 69.99,
-           (13, 'MacBook Pro 13\" i5-3210M, 4GB RAM, 500GB', 'Apple', 'Computing'): 74.99,
-           (14, 'Convertible Laptop Surface Book 512GB SSD Intel Core i7 16GB RAM dGPU', 'Microsoft', 'Computing'): 59.99,
-           (15, 'Convertible Laptop YOGA 300-11IBR 80M1004KGE', 'Lenovo', 'Computing'): 59.99,
+           (9, 'Virtual Reality Glasses Rift VR', 'Oculus',
+            'Gaming & VR'): 59.99,
+           (10, 'MacBook 12\" M-5Y31, 8GB RAM, 516GB', 'Apple',
+            'Computing'): 59.99,
+           (11, 'MacBook Air 11\" i7 2.2, 8GB RAM, 512GB', 'Apple',
+            'Computing'): 64.99,
+           (12, 'MacBook Air 13\" i5-5250U, 4GB RAM, 128GB', 'Apple',
+            'Computing'): 69.99,
+           (13, 'MacBook Pro 13\" i5-3210M, 4GB RAM, 500GB', 'Apple',
+            'Computing'): 74.99,
+           (14, 'Convertible Laptop Surface Book 512GB SSD ' +
+            'Intel Core i7 16GB RAM dGPU', 'Microsoft', 'Computing'): 59.99,
+           (15, 'Convertible Laptop YOGA 300-11IBR 80M1004KGE', 'Lenovo',
+            'Computing'): 59.99,
            (16, 'Watch 38mm', 'Apple', 'Wearables'): 39.99,
            (17, 'Watch 42mm', 'Apple', 'Wearables'): 44.99,
            (18, 'Watch Ambit 3', 'Suunto', 'Wearables'): 39.99,
@@ -28,8 +36,10 @@ devices = {(1, 'iPhone 7 128GB', 'Apple', 'Phones & Tablets'): 44.99,
            (21, 'Alexa Dot', 'Amazon', 'Smart Home'): 44.99,
            (22, 'Alexa Echo', 'Amazon', 'Smart Home'): 49.99,
            (23, 'Qbo Milk Master', 'Tchibo', 'Smart Home'): 29.99,
-           (24, 'Robotic Vacuum Cleaner POWERbot VR20J9020UR/EG', 'Samsung', 'Smart Home'): 39.99,
-           (25, 'Robotic Vacuum Cleaner POWERbot VR20J9259U/EG', 'Samsung', 'Smart Home'): 39.99}
+           (24, 'Robotic Vacuum Cleaner POWERbot VR20J9020UR/EG', 'Samsung',
+            'Smart Home'): 39.99,
+           (25, 'Robotic Vacuum Cleaner POWERbot VR20J9259U/EG', 'Samsung',
+            'Smart Home'): 39.99}
 
 time_period = {('1', 'one', 'a'): 1,
                ('2', 'two'): 2,
@@ -45,108 +55,15 @@ time_period = {('1', 'one', 'a'): 1,
                ('12', 'twelve'): 12}
 
 
-class ActionBrandRequest(Action):
+class ActionRequest(Action):
     def name(self):
-        return 'action_brand_request'
-
-    def _replace_syns(self, matches):
-        syns = {'laptop': 'comput',
-                'phon': 'phone',
-                'fon': 'phone',
-                'cleaner': 'home',
-                'watch': 'wearable',
-                'quadrocopt': 'drone'}
-
-        for item in matches:
-            item = item.lower()
-            if item in syns.keys():
-                matches = (matches[0], item.replace(item, syns[item]))
-
-        return matches
-
-    def _check_in_dict(self, brand_req):
-        '''
-        Checking for brand devices
-        '''
-        matches = []
-        br = brand_req[0].lower()
-        cat = brand_req[1].lower()
-        for item in devices.keys():
-            is_brand = False
-            is_category = False
-
-            is_brand = br in item[2].lower()
-            is_category = cat in item[3].lower()
-            # make_response()
-            # print(is_brand, is_category)
-            if is_brand and is_category:
-                matches.append(item[1])
-            # if is_brand and not is_category:
-            #     matches.append(item[1])
-
-        # print(matches)
-        return matches
-
-    def _get_brand(self, brand_req):
-        '''
-        Getting the brand
-        '''
-        print(brand_req)
-        pattern = r'(\w+) +(laptop|phone|comput|' \
-                   'tablet|watch|quadrocopt)+[ers]*'
-        regex = re.compile(pattern, flags=re.IGNORECASE)
-        result = regex.findall(brand_req)
-
-        return result[0]
+        return 'action_request'
 
     def _set_color(self, t):
         '''
         Making the output colored
         '''
         return '\033[0;31m' + t + '\033[0m'
-
-
-    # def run(self, text):
-    def run(self, dispatcher, tracker, domain):
-        try:
-            brand_req = tracker.get_slot('brand')
-            brand = self._get_brand(brand_req)
-            # brand = self._get_brand(text)
-            brand = self._replace_syns(brand)
-            matches = self._check_in_dict(brand)
-        except AttributeError:
-            print('Brand not found.')
-
-        if len(matches) != 1:
-            resp = self._set_color('For brand {br} we have' +
-                                   ' these devices:\n{bl}')
-            response = resp.format(br=brand[0].title(),
-                                   bl=matches)
-        else:
-            resp = self._set_color('We have one device available for ' +
-                                   'brand {br}. Selecting it!')
-            response = resp.format(br=brand[0].title())
-        # print(response)
-
-        dispatcher.utter_message(response)
-        return [SlotSet('brand', brand[0] if brand is not None else [])]
-
-
-class ActionRequest(Action):
-    def name(self):
-        return 'action_request'
-
-    def _check_in_dict(self, req):
-        '''
-        Chcking for the device in the list
-        '''
-        matches = []
-        for item in devices.keys():
-            if req.lower() in item[1].lower():
-                matches.append((item[1], devices[item]))
-
-        # print(matches)
-        return matches
 
     def _get_time_period(self, text):
         '''
@@ -165,52 +82,119 @@ class ActionRequest(Action):
         else:
             return 1
 
-    def _set_color(self, t):
-        '''
-        Making the output colored
-        '''
-        return '\033[0;31m' + t + '\033[0m'
+    def _replace_syns(self, matches):
+        syns = {'laptop': 'comput',
+                'phon': 'phone',
+                'fon': 'phone',
+                'cleaner': 'home',
+                'watch': 'wearable',
+                'quadrocopt': 'drone'}
 
+        for item in matches:
+            item = item.lower()
+            if item in syns.keys():
+                matches = (matches[0], item.replace(item, syns[item]))
 
-    # def run(self, text):
-    def run(self, dispatcher, tracker, domain):
-        calc_price = 1
+        return matches
+
+    def _get_brand(self, brand_req):
+        '''
+        Getting the brand
+        '''
+        pattern = r'(\w+) +(laptop|phone|comput|' \
+                   'tablet|watch|quadrocopt)+[ers]*'
+        regex = re.compile(pattern, flags=re.IGNORECASE)
+        result = regex.findall(brand_req)
+        # print(result)
+
+        if result != []:
+            return result[0]
+        else:
+            return []
+
+    def _check_in_brands(self, brand_req):
+        '''
+        Checking for brand devices
+        '''
         matches = []
-        try:
-            request = tracker.get_slot('device')
-            matches = self._check_in_dict(request)
-        except AttributeError:
-            print(self._set_color('Device not found.'))
-        # Checking for how long is the rent request
-        try:
-            time_req = tracker.get_slot('time')
+        br = brand_req[0].lower()
+        cat = brand_req[1].lower()
+        for item in devices.keys():
+            is_brand = False
+            is_category = False
+
+            is_brand = br in item[2].lower()
+            is_category = cat in item[3].lower()
+            # make_response()
+            # print(is_brand, is_category)
+            if is_brand and is_category:
+                matches.append((item[1], devices[item]))
+            # if is_brand and not is_category:
+            #     matches.append(item[1])
+
+        # print(matches)
+        return matches
+
+    def _check_in_devs(self, req):
+        '''
+        Chcking for the device in the list
+        '''
+        matches = []
+        for item in devices.keys():
+            if req.lower() in item[1].lower():
+                matches.append((item[1], devices[item]))
+
+        # print(matches)
+        return matches
+
+
+    # def run(self, request):
+    def run(self, dispatcher, tracker, domain):
+        matches = []
+        time_period = 1
+        calc_price = 1
+
+        request = tracker.get_slot('device')
+        time_req = tracker.get_slot('time')
+        if time_req is not None:
             time_period = self._get_time_period(time_req)
-        except TypeError:
-            time_period = 1
-            print(self._set_color('Time period not mentioned. Assume 1 month'))
-        # matches = self._check_in_dict(text)
-        # time_period = self._get_time_period(text)
+        print(time_req)
 
-        if len(matches) == 0:
-            response = self._set_color('We do not have what you requested. ' +
-                                       'Do you want any other device?')
-            # print(response)
-        elif len(matches) == 1:
-            calc_price = matches[0][1] * time_period
-            resp = self._set_color('We do have {req} for {price} overall.')
-            response = resp.format(req=matches[0][0].title(),
-                                   price=calc_price)
-            # print(response)
-        elif len(matches) > 1:
-            resp = self._set_color('We have several devices matching your ' +
-                                   'request.\nWhich one do you want?')
-            response = resp.format(matches)
-            # print(response)
+        if request is not None:
+            matches = self._check_in_devs(request)
+            # print(matches)
+            if matches == []:
+                brand = self._get_brand(request)
 
-        dispatcher.utter_message(response)
-        return [SlotSet('device', request if request is not None else ''),
-                SlotSet('time', time_period if time_period is not None else 1),
-                SlotSet('price', calc_price if calc_price is not None else -1)]
+                print(brand)
+                brand = self._replace_syns(brand)
+                matches = self._check_in_brands(brand)
+            pprint.pprint(matches)
+
+            if len(matches) > 1:
+                dispatcher.utter_template("utter_which")
+                return [SlotSet('device_list', matches if matches is not None else [])]
+            elif len(matches) == 1:
+                resp = "Selected the only one: {}\nMinimal rent is for a month."
+                if time_period == 1:
+                    resp += "\nFor how long do you want it?"
+                calc_price = matches[0][1] * time_period
+                dispatcher.utter_message(resp.format(matches))
+                return [SlotSet('device', matches[0][0] if matches is not None else []),
+                        SlotSet('one_price', matches[0][1] if matches is not None else []),
+                        SlotSet('time', time_period if time_period is not None else 1),
+                        SlotSet('price', calc_price if time_period is not None else 1)]
+            else:
+                dispatcher.utter_template("utter_not_found")
+
+        one_price = tracker.get_slot('one_price')
+        if one_price is not None:
+            calc_price = one_price * time_period
+        else:
+            calc_price = 1
+
+        return [SlotSet('time', time_period if time_period is not None else 1),
+                SlotSet('price', calc_price if calc_price is not None else 1)]
 
 
 if __name__ == '__main__':
@@ -220,16 +204,10 @@ if __name__ == '__main__':
     t3 = 'Samsung phones'
     t4 = 'Lenovo computer'
     t5 = 'Parrot Quadrocopter'
-    test = ActionBrandRequest()
-    # test.run(text)
+    test = ActionRequest()
+    # test.run(t0)
     # test.run(t1)
     test.run(t2)
-    # test.run(t3)
-    # test.run(t4)
-    # test.run(t5)
-    # test._check_in_dict(t0)
-    # test._check_in_dict(t1)
-    # test._check_in_dict(t2)
-
-    # brand = test._get_brand(t2)
-    # test._check_in_dict(t4)
+    test.run(t3)
+    test.run(t4)
+    test.run(t5)

@@ -1,38 +1,35 @@
 {
-  "max_history": 2,
+  "policy_names": [
+    "rasa_core.policies.memoization.MemoizationPolicy",
+    "rasa_core.policies.keras_policy.KerasPolicy"
+  ],
+  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble",
+  "rasa_core": "0.8.5",
   "action_fingerprints": {
     "action_request": {
       "slots": [
+        "one_price",
         "price",
-        "device"
-      ]
-    },
-    "action_listen": {
-      "slots": [
-        "time",
         "device",
-        "brand"
-      ]
-    },
-    "null": {
-      "slots": [
-        "time",
-        "device"
+        "device_list",
+        "time"
       ]
     },
     "utter_goodbye": {
       "slots": []
     },
-    "action_brand_request": {
+    "null": {
       "slots": [
-        "brand"
+        "device",
+        "time"
+      ]
+    },
+    "action_listen": {
+      "slots": [
+        "device",
+        "time"
       ]
     }
   },
-  "policy_names": [
-    "rasa_core.policies.memoization.MemoizationPolicy",
-    "rasa_core.policies.keras_policy.KerasPolicy"
-  ],
-  "rasa_core": "0.8.5",
-  "ensemble_name": "rasa_core.policies.ensemble.SimplePolicyEnsemble"
+  "max_history": 2
 }

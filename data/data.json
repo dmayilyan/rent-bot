@@ -255,7 +255,7 @@
             "start": 14,
             "end": 28,
             "value": "coffee machine",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
       },
@@ -715,7 +715,7 @@
             "start": 7,
             "end": 19,
             "value": "apple laptop",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
       },
@@ -727,7 +727,7 @@
             "start": 7,
             "end": 20,
             "value": "Samsung phone",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
       },
@@ -739,7 +739,7 @@
             "start": 23,
             "end": 34,
             "value": "Apple phone",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
       },
@@ -751,7 +751,7 @@
             "start": 16,
             "end": 32,
             "value": "lenovo computers",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
       },
@@ -763,7 +763,7 @@
             "start": 12,
             "end": 24,
             "value": "apple phones",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
       },
@@ -823,7 +823,7 @@
             "start": 9,
             "end": 24,
             "value": "lenovo computer",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
       },
@@ -835,9 +835,157 @@
             "start": 10,
             "end": 22,
             "value": "apple laptop",
-            "entity": "brand"
+            "entity": "device"
           }
         ]
+      },
+      {
+        "text": "I want apple computer for 2 months",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 26,
+            "end": 34,
+            "value": "2 months",
+            "entity": "time"
+          },
+          {
+            "start": 7,
+            "end": 21,
+            "value": "apple computer",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Bye bye",
+        "intent": "goodbye",
+        "entities": []
+      },
+      {
+        "text": "MacBook Air 13",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "MacBook Air 13",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "MacBook Air 11\"",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "MacBook Air 11\"",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "Watch 42mm",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "Watch 42mm",
+            "entity": "device"
+          }
+        ]
+      },
+      {
+        "text": "5 months",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "5 months",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "a month",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "a month",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "month",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 5,
+            "value": "month",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "For five months",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 4,
+            "end": 15,
+            "value": "five months",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "11 months.",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "11 months",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "two months",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "two months",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "five months",
+        "intent": "request",
+        "entities": [
+          {
+            "start": 0,
+            "end": 11,
+            "value": "five months",
+            "entity": "time"
+          }
+        ]
+      },
+      {
+        "text": "That's it",
+        "intent": "goodbye",
+        "entities": []
       }
     ]
   }

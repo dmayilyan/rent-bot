@@ -173,40 +173,18 @@
 ## Generated Story -6883129069017709789
 * greet
     - utter_greet
-* request{"device": "S8+}
+* request{"device": "S8+"}
     - slot{"device": "S8+"}
     - action_request
     - slot{"device": "S8+"}
 * goodbye
-    - export
-
-## Generated Story -9148720919509289663
-* request{"brand": "apple laptop"}
-    - slot{"brand": "apple laptop"}
-    - action_brand_request
-    - slot{"brand": ["apple", "comput"]}
-* request{"device": "air 11\" i7"}
-    - slot{"device": "air 11\" i7"}
-    - action_request
-    - slot{"device": "air 11\" i7"}
-* goodbye
-    - utter_goodbye
-    - export
-
-## Generated Story 8088928291388930346
-* request{"brand": "lenovo laptop"}
-    - slot{"brand": "lenovo laptop"}
-    - action_brand_request
-    - slot{"brand": ["lenovo", "comput"]}
-* goodbye
-    - utter_goodbye
     - export
 
 ## Generated Story 4314686574644314330
-* request{"brand": "apple laptop"}
-    - slot{"brand": "apple laptop"}
-    - action_brand_request
-    - slot{"brand": ["apple", "comput"]}
+* request{"device": "apple laptop"}
+    - slot{"device": "apple laptop"}
+    - action_request
+    - slot{"device": ["apple", "comput"]}
 * request{"time": "five months"}
     - slot{"time": "five months"}
     - action_request
@@ -222,10 +200,10 @@
     - export
 
 ## Generated Story -1971208058125876913
-* request{"brand": "apple computer"}
-    - slot{"brand": "apple computer"}
-    - action_brand_request
-    - slot{"brand": ["apple", "comput"]}
+* request{"device": "apple computer"}
+    - slot{"device": "apple computer"}
+    - action_request
+    - slot{"device": ["apple", "comput"]}
 * request{"time": "seven months"}
     - slot{"time": "seven months"}
     - action_request
@@ -241,10 +219,10 @@
     - export
 
 ## Generated Story -1941674745345144663
-* request{"brand": "apple laptop"}
-    - slot{"brand": "apple laptop"}
-    - action_brand_request
-    - slot{"brand": ["apple", "comput"]}
+* request{"device": "apple laptop"}
+    - slot{"device": "apple laptop"}
+    - action_request
+    - slot{"device": ["apple", "comput"]}
 * request{"device": "macbook pro 13\" i5-3210m, 4gb ram"}
     - slot{"device": "macbook pro 13\" i5-3210m, 4gb ram"}
     - action_request
@@ -255,10 +233,10 @@
     - export
 
 ## Generated Story -6026342271666424298
-* request{"brand": "apple laptop"}
-    - slot{"brand": "apple laptop"}
-    - action_brand_request
-    - slot{"brand": "apple"}
+* request{"device": "apple laptop"}
+    - slot{"device": "apple laptop"}
+    - action_request
+    - slot{"device": "apple"}
 * request{"device": "macbook 12\" m-5y31, 8gb ram,"}
     - slot{"device": "macbook 12\" m-5y31, 8gb ram,"}
     - action_request
@@ -271,4 +249,58 @@
     - slot{"device": "macbook 12\" m-5y31, 8gb ram,"}
     - slot{"time": 3}
     - slot{"price": 179.97}
+    - export
+
+## Generated Story 7550561563330800685
+* request{"time": "2 months", "device": "apple laptop"}
+    - slot{"device": "apple laptop"}
+    - slot{"time": "2 months"}
+    - action_request
+    - slot{"device_list": [["MacBook Air 13\" i5-5250U, 4GB RAM, 128GB", 69.99], ["MacBook 12\" M-5Y31, 8GB RAM, 516GB", 59.99], ["MacBook Air 11\" i7 2.2, 8GB RAM, 512GB", 64.99], ["MacBook Pro 13\" i5-3210M, 4GB RAM, 500GB", 74.99]]}
+    - slot{"time": 1}
+* request{"device": "i5-3210m, 4gb ram, 500gb"}
+    - slot{"device": "i5-3210m, 4gb ram, 500gb"}
+    - action_request
+    - slot{"device": "MacBook Pro 13\" i5-3210M, 4GB RAM, 500GB"}
+    - slot{"time": 1}
+* goodbye
+    - export
+
+## Generated Story -5422891884399863990
+* request{"device": "apple laptop", "time": "6 months"}
+    - slot{"device": "apple laptop"}
+    - slot{"time": "6 months"}
+    - action_request
+    - slot{"device_list": [["MacBook 12\" M-5Y31, 8GB RAM, 516GB", 59.99], ["MacBook Air 13\" i5-5250U, 4GB RAM, 128GB", 69.99], ["MacBook Air 11\" i7 2.2, 8GB RAM, 512GB", 64.99], ["MacBook Pro 13\" i5-3210M, 4GB RAM, 500GB", 74.99]]}
+* request{"device": "i5-321"}
+    - slot{"device": "i5-321"}
+    - action_request
+    - slot{"device": "MacBook Pro 13\" i5-3210M, 4GB RAM, 500GB"}
+    - slot{"one_price": 74.99}
+    - slot{"price": 899.8799999999999}
+* goodbye
+    - utter_goodbye
+    - export
+
+## Generated Story -2370535134684755878
+* request{"device": "apple laptop"}
+    - slot{"device": "apple laptop"}
+    - action_request
+    - slot{"device_list": [["MacBook Air 13\" i5-5250U, 4GB RAM, 128GB", 69.99], ["MacBook 12\" M-5Y31, 8GB RAM, 516GB", 59.99], ["MacBook Air 11\" i7 2.2, 8GB RAM, 512GB", 64.99], ["MacBook Pro 13\" i5-3210M, 4GB RAM, 500GB", 74.99]]}
+* request{"device": "macbook 12\" m-5y31, 8gb ra"}
+    - slot{"device": "macbook 12\" m-5y31, 8gb ra"}
+    - action_request
+    - slot{"device": "MacBook 12\" M-5Y31, 8GB RAM, 516GB"}
+    - slot{"one_price": 59.99}
+    - slot{"time": 1}
+    - slot{"price": 59.99}
+* request{"time": "6 months"}
+    - slot{"time": "6 months"}
+    - action_request
+    - slot{"device": "MacBook 12\" M-5Y31, 8GB RAM, 516GB"}
+    - slot{"one_price": 59.99}
+    - slot{"time": 6}
+    - slot{"price": 359.94}
+* goodbye
+    - utter_goodbye
     - export

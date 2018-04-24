@@ -1,15 +1,19 @@
 slots:
   device:
     type: text
+  device_list:
+    type: list
   time:
-    type: text
+    type: float
   brand:
     type: text
   price:
     type: float
+    min_value: 0
+  one_price:
+    type: float
 
 intents:
- - brand_request
  - request
  - greet
  - goodbye
@@ -23,16 +27,21 @@ entities:
 templates:
   utter_greet:
     - 'Hello. How can we help?'
-    - 'Can I be helpful?'
+    - 'Hello, Can I be helpful?'
   utter_goodbye:
-    - 'Thank you for using our service.\n Device: {device}\n Price: {price}'
+    - 'Thank you for using our service. You need to pay {price}'
+  utter_which:
+    - 'Which one do you want?'
+  utter_recipe:
+    - 'For {device} it totals to {price}.'
   utter_not_found:
-    - 'The device you requested is not found. Choose something else.'
+    - 'Check the request and try again'
 
 
 actions:
  - utter_greet
  - utter_goodbye
+ - utter_which
+ - utter_recipe
  - utter_not_found
  - actions.ActionRequest
- - actions.ActionBrandRequest

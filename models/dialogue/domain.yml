@@ -2,15 +2,17 @@ action_factory: null
 action_names:
 - utter_greet
 - utter_goodbye
+- utter_which
+- utter_recipe
 - utter_not_found
 - action_request
-- action_brand_request
 actions:
 - utter_greet
 - utter_goodbye
+- utter_which
+- utter_recipe
 - utter_not_found
 - actions.ActionRequest
-- actions.ActionBrandRequest
 config:
   store_entities_as_slots: true
 entities:
@@ -18,7 +20,6 @@ entities:
 - time
 - brand
 intents:
-- brand_request
 - request
 - greet
 - goodbye
@@ -29,20 +30,34 @@ slots:
   device:
     initial_value: null
     type: rasa_core.slots.TextSlot
-  price:
+  device_list:
+    initial_value: null
+    type: rasa_core.slots.ListSlot
+  one_price:
     initial_value: null
     max_value: 1.0
     min_value: 0.0
     type: rasa_core.slots.FloatSlot
+  price:
+    initial_value: null
+    max_value: 1.0
+    min_value: 0
+    type: rasa_core.slots.FloatSlot
   time:
     initial_value: null
-    type: rasa_core.slots.TextSlot
+    max_value: 1.0
+    min_value: 0.0
+    type: rasa_core.slots.FloatSlot
 templates:
   utter_goodbye:
-  - text: 'Thank you for using our service.\n Device: {device}\n Price: {price}'
+  - text: Thank you for using our service. You need to pay {price}
   utter_greet:
   - text: Hello. How can we help?
-  - text: Can I be helpful?
+  - text: Hello, Can I be helpful?
   utter_not_found:
-  - text: The device you requested is not found. Choose something else.
+  - text: Check the request and try again
+  utter_recipe:
+  - text: For {device} it totals to {price}.
+  utter_which:
+  - text: Which one do you want?
 topics: []
